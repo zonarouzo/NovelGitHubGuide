@@ -20,6 +20,7 @@ GitHub Pages で公開することを前提に、HTML / CSS / JavaScript だけ�
 ## ファイル構成
 
 ```
+├── CLAUDE.md                 … Claude 用の作業ルール（日本語で報告する等）
 ├── index.html ほか各ページ（.html）
 ├── 404.html
 ├── favicon.svg
