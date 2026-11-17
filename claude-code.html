@@ -60,15 +60,23 @@
   <li><p class="step-main">画面の案内に従って GitHub との連携を始め、GitHub の許可のページで許可します。</p>
     <figure class="shot" data-shot="github-authorize" data-caption="GitHub の許可の画面"></figure>
     <div class="note"><p>許可が終わると Claude Code の画面に戻ります。</p></div></li>
-  <li><p class="step-main"><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">許可の設定ページ（GitHub）↗</a>を開き、Claude が使ってよいリポジトリを選んで保存します。</p>
-    <figure class="shot" data-shot="github-app-install" data-caption="Claude に許可するリポジトリを選ぶ画面（GitHub）"></figure>
-    <div class="note"><p>この手続きは「Claude GitHub App のインストール」と呼ばれますが、<strong>パソコンやスマホに何かを入れるものではありません</strong>。GitHub のページ上で設定するだけです。非公開のリポジトリを使うには、この設定が必要です。</p></div></li>
+  <li><p class="step-main"><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">許可の設定ページ（GitHub）↗</a>を開き、「Repository access」で次の ①〜③ を操作します。</p>
+    <figure class="shot" data-shot="github-app-install" data-caption="Claude に許可するリポジトリを選ぶ画面（GitHub）の ①〜③ の場所"></figure>
+    <ul class="marks">
+      <li><span class="mark">①</span><span><span class="ui">All repositories</span>（すべてのリポジトリ）か、</span></li>
+      <li><span class="mark">②</span><span><span class="ui">Only select repositories</span>（選んだリポジトリだけ）のどちらかを選びます（<a href="#app-scope">選び方は下</a>）。②の場合は、表示される欄で小説のリポジトリを選びます。</span></li>
+      <li><span class="mark">③</span><span><span class="ui">Save</span>（保存）を押します。</span></li>
+    </ul>
+    <div class="note">
+      <p>この手続きは「Claude GitHub App のインストール」と呼ばれますが、<strong>パソコンやスマホに何かを入れるものではありません</strong>。GitHub のページ上で設定するだけです。非公開のリポジトリを使うには、この設定が必要です。</p>
+      <p>画像は、すでに設定済みの内容を変更する画面です。はじめて設定する場合は、保存のボタンの名前が違うことがあります（例：<span class="ui">Install</span>）。</p>
+    </div></li>
 </ol>
 
-<h3 id="app-scope">どちらを選ぶ？</h3>
-<p><strong>GitHub を小説専用に使うなら <span class="ui">All repositories</span>（すべてのリポジトリ）がおすすめです。</strong>作品ごとにリポジトリを増やしても、追加の設定がいりません。</p>
+<h3 id="app-scope">①と②、どちらを選ぶ？</h3>
+<p><strong>GitHub を小説専用に使うなら ① <span class="ui">All repositories</span>（すべてのリポジトリ）がおすすめです。</strong>今あるリポジトリだけでなく、<strong>これから作るリポジトリにも自動で許可</strong>されるので、作品ごとにリポジトリを増やしても追加の設定がいりません。</p>
 <div class="note">
-  <p>GitHub で小説以外の大事なもの（仕事など）も管理している場合は、<span class="ui">Only select repositories</span>（選んだリポジトリだけ）にして、小説のリポジトリだけを選んでください。その場合、作品のリポジトリを増やすたびに、この設定ページで追加が必要です。</p>
+  <p>GitHub で小説以外の大事なもの（仕事など）も管理している場合は、② <span class="ui">Only select repositories</span> にして、小説のリポジトリだけを選んでください。その場合、作品のリポジトリを増やすたびに、この設定ページで追加が必要です。</p>
   <p>どちらを選んでも、Claude が作業するのは Claude Code の画面で選んだリポジトリだけです。設定はあとから変更できます。</p>
 </div>
 

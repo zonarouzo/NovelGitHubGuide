@@ -58,7 +58,8 @@ window.SITE_CONFIG = {
   screenshots: {
     "template-use-button": "template-use-button.png",
     "template-create-form": "template-create-form.png",
-    "claude-code-repo-select": "claude-code-repo-select.png"
+    "claude-code-repo-select": "claude-code-repo-select.png",
+    "github-app-install": "github-app-install.png"
   },
 
   /*
