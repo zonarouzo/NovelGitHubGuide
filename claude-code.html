@@ -68,14 +68,30 @@
   <li><p>画面の案内に従って、GitHub との連携を始めます。GitHub の「許可（認可）」のページが開きます。</p></li>
   <li><p>内容を確認して許可します。終わると Claude Code の画面に戻ります。</p>
     <figure class="shot" data-shot="github-authorize" data-caption="GitHub の許可の画面"></figure></li>
-  <li><p><strong>Claude GitHub App をインストールします。</strong>非公開（Private）のリポジトリで作業するには、このアプリのインストールが必要です。</p>
-    <p><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">Claude GitHub App のインストールページを開く ↗</a></p></li>
-  <li><p>インストールの画面で、どのリポジトリに許可するかを選びます。<strong><span class="ui">Only select repositories</span>（選んだリポジトリだけ）</strong>を選び、ステップ2で作った小説管理リポジトリを指定するのがおすすめです。</p>
-    <figure class="shot" data-shot="github-app-install" data-caption="Claude GitHub App のインストール画面"></figure></li>
+  <li><p><strong>GitHub の中で、Claude にリポジトリへの出入りを許可します。</strong>非公開（Private）のリポジトリで作業するには、この許可が必要です。</p>
+    <p>手続きの名前は「Claude GitHub App のインストール」ですが、<strong>パソコンやスマホに何かを入れるものではありません</strong>。GitHub のページ上で「Claude がどのリポジトリを使ってよいか」を設定するだけです。</p>
+    <p><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">許可の設定ページ（GitHub）を開く ↗</a></p></li>
+  <li><p>許可するリポジトリの範囲を選び、画面の案内に従って保存します。どちらを選ぶかは、下の表を参考にしてください。</p>
+    <figure class="shot" data-shot="github-app-install" data-caption="Claude に許可するリポジトリを選ぶ画面（GitHub）"></figure></li>
 </ol>
+
+<h3 id="app-scope">どのリポジトリを許可する？</h3>
+<div class="cards">
+  <div class="card">
+    <h3><span class="ui">All repositories</span><br>すべてのリポジトリ</h3>
+    <p><strong>向いている人：</strong>GitHub を小説のためだけに使う人。複数の作品をそれぞれのリポジトリで管理する人。</p>
+    <p><strong>注意点：</strong>新しく作ったリポジトリも、自動で Claude が使えるようになります。小説以外の大事なリポジトリがある場合は、それも対象になります。</p>
+  </div>
+  <div class="card">
+    <h3><span class="ui">Only select repositories</span><br>選んだリポジトリだけ</h3>
+    <p><strong>向いている人：</strong>GitHub で小説以外のもの（仕事・ほかの活動など）も管理している人。</p>
+    <p><strong>注意点：</strong>作品のリポジトリを増やすたびに、この設定ページで追加が必要です。</p>
+  </div>
+</div>
 <div class="callout callout-tip">
-  <p class="callout-title">💡 許可するのは小説のリポジトリだけでOK</p>
-  <p>「選んだリポジトリだけ」にしておくと、Claude がほかのリポジトリにアクセスすることはありません。小説のリポジトリを増やしたときは、あとから追加できます。</p>
+  <p class="callout-title">💡 迷ったら</p>
+  <p>この GitHub アカウントを小説専用に使うなら、<strong>All repositories</strong> が手間がかからずおすすめです。どちらを選んでも、あとから設定ページで変更できます。</p>
+  <p>どちらの場合も、Claude が作業するのは、あなたが Claude Code の画面で選んだリポジトリです。</p>
 </div>
 <p class="small">Pro プランでは、作業用の環境（Default）が自動で用意されると案内されています。特別な設定は不要です。</p>
 
@@ -101,9 +117,9 @@
 <details class="faq">
   <summary>リポジトリの一覧に、自分の小説リポジトリが出てこない</summary>
   <div class="answer">
-    <p>非公開のリポジトリは、<strong>Claude GitHub App がそのリポジトリに対してインストールされている</strong>場合だけ表示されます。</p>
+    <p>非公開のリポジトリは、<strong>GitHub の設定で Claude にそのリポジトリへの許可（Claude GitHub App のインストール）がされている</strong>場合だけ表示されます。</p>
     <ol>
-      <li><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">Claude GitHub App のページ ↗</a>を開きます。</li>
+      <li><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">許可の設定ページ（GitHub）↗</a>を開きます。</li>
       <li>自分のアカウントを選び、許可するリポジトリに小説のリポジトリが含まれているか確認します。含まれていなければ追加して保存します。</li>
       <li>Claude Code の画面を再読み込みして、もう一度選択欄を確認します。</li>
     </ol>
@@ -126,7 +142,7 @@
 <h2>このページのまとめ</h2>
 <ul>
   <li>Claude Code を開き、GitHub と連携した</li>
-  <li>Claude GitHub App を小説リポジトリに許可した</li>
+  <li>GitHub の設定で、Claude に小説リポジトリへの許可を与えた</li>
   <li>リポジトリを選んで、ファイル一覧を答えてもらえた</li>
 </ul>
 </article>

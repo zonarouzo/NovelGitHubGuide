@@ -316,6 +316,9 @@
           src: "assets/images/screenshots/" + shots[id],
           alt: caption, loading: "lazy"
         }));
+      } else if (!CONFIG.showScreenshotPlaceholders) {
+        fig.hidden = true;
+        return;
       } else {
         fig.classList.add("is-placeholder");
         fig.appendChild(el("div", { className: "shot-placeholder" }, [

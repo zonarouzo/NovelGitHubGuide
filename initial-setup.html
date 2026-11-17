@@ -51,11 +51,13 @@
   <li>舞台（時代・場所など）</li>
   <li>文体（一人称・三人称、です・ます調か常体か など）</li>
 </ul>
+<p>文体は、言葉で説明するかわりに<strong>過去に書いた作品を見本として渡す</strong>こともできます（<a href="#style">下の手順</a>）。</p>
 
 <h2>手順</h2>
 <ol class="steps">
   <li><p><a data-link="claudeCode" href="https://claude.ai/code">Claude Code ↗</a> を開き、小説管理リポジトリを選びます（<a href="claude-code.html#select">ステップ3</a>と同じ操作です）。</p></li>
-  <li><p>下の「初回プロンプト」の <span class="ui">コピー</span> ボタンを押して、文章をコピーします。</p></li>
+  <li id="prompt"><p>次の「初回プロンプト」の <span class="ui">コピー</span> ボタンを押して、文章をコピーします。</p>
+    <div data-prompt="initial-setup"></div></li>
   <li><p>Claude Code の入力欄に貼り付けます（パソコンでは <kbd>Ctrl</kbd>＋<kbd>V</kbd>、Mac では <kbd>⌘</kbd>＋<kbd>V</kbd>）。</p></li>
   <li><p>【 】の部分を、あなたの作品の内容に書き換えます。【 】の記号ごと消して書き換えてください。</p></li>
   <li><p>送信します。</p>
@@ -66,8 +68,24 @@
   <li><p>作業内容を「main（メインの保存場所）」に反映します。方法は <a href="writing.html#save">執筆と管理のページの「作業内容の保存と反映」</a>を参照してください。</p></li>
 </ol>
 
-<h2 id="prompt">初回プロンプト</h2>
-<div data-prompt="initial-setup"></div>
+<h2 id="style">自分の文体を覚えてもらう（おすすめ）</h2>
+<p>過去に書いた作品があれば、それを「文体サンプル」として渡しておくと、Claude があなたの語り口や文のリズムを参考にして書いてくれます。初期設定のあとに行うのがおすすめです。</p>
+<ol class="steps">
+  <li><p>過去作の中から、文体がよく表れている部分を選び、コピーします。<strong>1〜2話ぶん（数千字程度）</strong>で十分です。</p></li>
+  <li><p>次のプロンプトをコピーして Claude Code に貼り付け、【 】の部分に過去作の文章を貼り付けて送信します。</p>
+    <div data-prompt="style-save"></div></li>
+  <li><p>保存が終わったら、文体の特徴をルールにまとめてもらいます。Claude が分析結果を見せて確認してくるので、内容がよければ「反映してOKです」と返信します。</p>
+    <div data-prompt="style-analyze"></div></li>
+</ol>
+<div class="callout">
+  <p class="callout-title">ℹ️ 文体サンプルについて</p>
+  <ul>
+    <li>文体サンプルは <code>settings/style_samples/</code> フォルダに保存され、Claude は執筆のたびに参考にします。</li>
+    <li>文体サンプルは「読むだけの資料」で、Claude が書き換えたり消したりすることはありません。</li>
+    <li>サンプルの文章や登場人物が、新しい原稿にそのまま使われることはありません。</li>
+    <li>サンプルが長いほど、Claude の利用量も多くなります。全文ではなく抜粋がおすすめです。</li>
+  </ul>
+</div>
 
 <h2>初期設定が終わったか確かめる</h2>
 <p>次のプロンプトを送ると、今のファイル構成を説明してもらえます。サンプル作品の名前が残っていないか確認しましょう。</p>
@@ -82,6 +100,7 @@
 <ul>
   <li>初回プロンプトを送り、サンプルを削除した</li>
   <li>作品の基本情報を登録した</li>
+  <li>（おすすめ）過去作を文体サンプルとして渡した</li>
   <li>作業内容を main に反映した</li>
 </ul>
 </article>

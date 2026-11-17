@@ -262,7 +262,8 @@ th { background: #f7f2ea; white-space: nowrap; }
   padding: 16px; box-shadow: var(--shadow);
 }
 .card h3 { margin: 0 0 0.4em; font-size: 1.05rem; }
-.card p { margin: 0; font-size: 0.95rem; }
+.card p { margin: 0 0 0.5em; font-size: 0.95rem; }
+.card p:last-child { margin-bottom: 0; }
 .card-icon { font-size: 1.6rem; display: block; margin-bottom: 4px; }
 
 /* ---------- チェックリスト（トップ） ---------- */
@@ -350,3 +351,6 @@ details.faq .answer > :last-child { margin-bottom: 0; }
 @media print {
   .site-header, .pager, .step-done, .copy-btn, .progress { display: none; }
 }
+
+/* ページ内リンクで飛んだとき、見出しが固定ヘッダーに隠れないようにする */
+[id] { scroll-margin-top: 120px; }

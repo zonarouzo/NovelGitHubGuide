@@ -36,6 +36,7 @@
     <li><a href="#final">完成原稿としての保存</a></li>
     <li><a href="#character">キャラクター設定の追加・変更</a></li>
     <li><a href="#world">世界観設定の管理</a></li>
+    <li><a href="#style">文体の管理</a></li>
     <li><a href="#spinoff">スピンオフの作成・管理</a></li>
     <li><a href="#history">過去の原稿の確認・復元</a></li>
     <li><a href="#save">作業内容の保存と反映</a></li>
@@ -99,6 +100,12 @@
 <div data-prompt="settings-from-draft"></div>
 <p>設定と原稿の食い違いが気になったら、矛盾チェックを頼みましょう。</p>
 <div data-prompt="check-all"></div>
+
+<h2 id="style">文体の管理</h2>
+<p>Claude は、<code>settings/style_guide.md</code>（文体・表記のルール）と、<code>settings/style_samples/</code>（あなたの過去作などの文体サンプル）を読んでから執筆します。文体サンプルはあとから何本でも追加できます。</p>
+<div data-prompt="style-save"></div>
+<div data-prompt="style-analyze"></div>
+<div data-prompt="style-check"></div>
 
 <h2 id="spinoff">スピンオフの作成・管理</h2>
 <p>スピンオフは <code>spinoffs/</code> フォルダの中に、作品ごとのフォルダを作って管理します。共通の設定は本編と共有し、そのスピンオフだけの設定は専用の <code>settings/</code> に保存します。</p>

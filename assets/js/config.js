@@ -56,5 +56,12 @@ window.SITE_CONFIG = {
    * 例： "github-signup": "github-signup.png"
    */
   screenshots: {
-  }
+  },
+
+  /*
+   * 画像がまだない枠（画像準備中）を表示するかどうか
+   * false：画像が登録されていない枠は表示しない（公開サイト向け。画像がなくても読めるように本文を書いています）
+   * true ：「画像準備中」の枠を表示する（どこに画像が入るかを確認したいとき）
+   */
+  showScreenshotPlaceholders: false
 };

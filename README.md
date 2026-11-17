@@ -74,25 +74,28 @@ screenshots: {
 }
 ```
 
-登録のない ID は「画像準備中」の枠で表示されます。現在用意している枠は次のとおりです。
+登録のない ID の枠は、通常は表示されません（本文は画像がなくても読めるように書いています）。
+`config.js` の `showScreenshotPlaceholders` を `true` にすると「画像準備中」の枠が表示され、画像の入る場所を確認できます。
 
-| ID | ページ | 内容 |
-|---|---|---|
-| `github-signup` | アカウント作成 | GitHub の登録ページ |
-| `github-signup-code` | アカウント作成 | メールで届いた確認コードを入力する画面 |
-| `github-email-verify` | アカウント作成 | メール設定の画面（確認メールの再送） |
-| `github-2fa-enable` | アカウント作成 | 二段階認証を有効にするボタン |
-| `template-use-button` | リポジトリ作成 | 「Use this template」ボタン |
-| `template-create-form` | リポジトリ作成 | 名前の入力と「Private」の選択 |
-| `repo-created` | リポジトリ作成 | 作成したリポジトリのページ |
-| `claude-code-top` | Claude Code連携 | Claude Code の最初の画面 |
-| `github-authorize` | Claude Code連携 | GitHub の許可の画面 |
-| `github-app-install` | Claude Code連携 | Claude GitHub App のインストール画面 |
-| `claude-code-repo-select` | Claude Code連携 | リポジトリを選ぶ画面 |
-| `initial-prompt-sent` | 初期設定 | 初回プロンプトを送信したところ |
-| `github-file-history` | 執筆と管理 | ファイルの変更履歴 |
-| `claude-code-create-pr` | 執筆と管理 | Claude Code の「Create PR」ボタン |
-| `github-merge-pr` | 執筆と管理 | GitHub の「Merge pull request」ボタン |
+画像は必須ではありません。用意する場合は、次の優先度を目安にしてください（★が多いほど、初心者が迷いやすい画面）。現在用意している枠は次のとおりです。
+
+| ID | ページ | 内容 | 優先度 |
+|---|---|---|---|
+| `github-signup` | アカウント作成 | GitHub の登録ページ | ★ |
+| `github-signup-code` | アカウント作成 | メールで届いた確認コードを入力する画面 | ★ |
+| `github-email-verify` | アカウント作成 | メール設定の画面（確認メールの再送） | ★ |
+| `github-2fa-enable` | アカウント作成 | 二段階認証を有効にするボタン | ★★ |
+| `template-use-button` | リポジトリ作成 | 「Use this template」ボタン | ★★★ |
+| `template-create-form` | リポジトリ作成 | 名前の入力と「Private」の選択 | ★★★ |
+| `repo-created` | リポジトリ作成 | 作成したリポジトリのページ | ★ |
+| `claude-code-top` | Claude Code連携 | Claude Code の最初の画面 | ★ |
+| `github-authorize` | Claude Code連携 | GitHub の許可の画面 | ★★ |
+| `github-app-install` | Claude Code連携 | Claude に許可するリポジトリを選ぶ画面（GitHub） | ★★★ |
+| `claude-code-repo-select` | Claude Code連携 | リポジトリを選ぶ画面 | ★★★ |
+| `initial-prompt-sent` | 初期設定 | 初回プロンプトを送信したところ | ★ |
+| `github-file-history` | 執筆と管理 | ファイルの変更履歴 | ★ |
+| `claude-code-create-pr` | 執筆と管理 | Claude Code の「Create PR」ボタン | ★★★ |
+| `github-merge-pr` | 執筆と管理 | GitHub の「Merge pull request」ボタン | ★★★ |
 
 新しい枠を作るときは、HTML に `<figure class="shot" data-shot="新しいID" data-caption="説明"></figure>` と書きます。
 
@@ -119,7 +122,7 @@ screenshots: {
 - **テンプレートリポジトリのURL**：`config.js` の `templateRepoUrl`（現在は空欄）
 - **main への自動反映**：未検証。現在は「Create PR → Merge pull request」の暫定手順を `writing.html#save` に掲載
 - **初回プロンプト**：テンプレートの最終仕様に合わせて `prompts.js` の `initial-setup` を調整
-- **スクリーンショット**：すべて「画像準備中」
+- **スクリーンショット**：未登録（枠は非表示。`showScreenshotPlaceholders` で表示切り替え）
 
 ## 内容の根拠
 
