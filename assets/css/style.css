@@ -417,3 +417,6 @@ details.more > summary .more-tag {
 }
 .must > :last-child { margin-bottom: 0; }
 .must p { font-weight: 600; }
+
+/* 画像の拡大リンク */
+.shot-link { display: block; cursor: zoom-in; }

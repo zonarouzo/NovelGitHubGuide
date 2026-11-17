@@ -312,10 +312,13 @@
       var caption = fig.getAttribute("data-caption") || "";
       fig.innerHTML = "";
       if (shots[id]) {
-        fig.appendChild(el("img", {
-          src: "assets/images/screenshots/" + shots[id],
-          alt: caption, loading: "lazy"
-        }));
+        // 画像をタップ・クリックすると、別のタブで原寸表示（スマホで小さく見えるとき用）
+        var src = "assets/images/screenshots/" + shots[id];
+        fig.appendChild(el("a", { href: src, target: "_blank", rel: "noopener", className: "shot-link",
+          "aria-label": "画像を拡大して見る" }, [
+          el("img", { src: src, alt: caption, loading: "lazy" })
+        ]));
+        if (caption) caption += "（タップ・クリックで拡大）";
       } else if (!CONFIG.showScreenshotPlaceholders) {
         fig.hidden = true;
         return;
