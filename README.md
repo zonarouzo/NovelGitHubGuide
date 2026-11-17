@@ -91,7 +91,7 @@ screenshots: {
 | `claude-code-top` | Claude Code連携 | Claude Code の最初の画面 | ★ |
 | `github-authorize` | Claude Code連携 | GitHub の許可の画面 | ★★ |
 | `github-app-install` | Claude Code連携 | Claude に許可するリポジトリを選ぶ画面（GitHub） | ★★★ |
-| `claude-code-repo-select` | Claude Code連携 | リポジトリを選ぶ画面 | ★★★ |
+| `claude-code-repo-select` | Claude Code連携 | リポジトリを選ぶ画面 | ★★★（登録済み。テンプレート選択中の画像のため、自作リポジトリ選択中の画像に差し替え推奨） |
 | `initial-prompt-sent` | 初期設定 | 初回プロンプトを送信したところ | ★ |
 | `github-file-history` | 執筆と管理 | ファイルの変更履歴 | ★ |
 | `claude-code-create-pr` | 執筆と管理 | Claude Code の「Create PR」ボタン | ★★★ |
@@ -132,7 +132,7 @@ screenshots: {
 - **テンプレートリポジトリのURL**：確定済み（`https://github.com/zonarouzo/NovelTemplate`）。変わった場合は `config.js` の `templateRepoUrl` を更新
 - **main への自動反映**：未検証。現在は「Create PR → Merge pull request」の暫定手順を `writing.html#save` に掲載
 - **初回プロンプト**：テンプレートの最終仕様に合わせて `prompts.js` の `initial-setup` を調整
-- **スクリーンショット**：`template-use-button`・`template-create-form` を登録済み。ほかは未登録（枠は非表示。`showScreenshotPlaceholders` で表示切り替え）
+- **スクリーンショット**：`template-use-button`・`template-create-form`・`claude-code-repo-select` を登録済み。ほかは未登録（枠は非表示。`showScreenshotPlaceholders` で表示切り替え）
 
 ## 内容の根拠
 

@@ -74,9 +74,17 @@
 
 <h2 id="select">3. リポジトリを選んで確かめる</h2>
 <ol class="steps">
-  <li><p class="step-main">入力欄の近くにある<strong>リポジトリの選択欄</strong>で、小説のリポジトリを選びます。</p>
-    <figure class="shot" data-shot="claude-code-repo-select" data-caption="リポジトリを選ぶ画面"></figure>
-    <div class="note"><p>ブランチ（作業の元にする場所）の選択欄がある場合は、<code>main</code> のままにします。</p></div></li>
+  <li><p class="step-main">次の ①② の順に操作して、小説のリポジトリを選びます。</p>
+    <figure class="shot" data-shot="claude-code-repo-select" data-caption="リポジトリを選ぶ画面の ①② の場所"></figure>
+    <ul class="marks">
+      <li><span class="mark">①</span><span>入力欄の下にある、<strong>本のアイコンのボタン</strong>（リポジトリ名）を押します。</span></li>
+      <li><span class="mark">②</span><span>一覧から、<strong>ステップ2で作った自分の小説のリポジトリ</strong>を選びます（✓ が付きます）。</span></li>
+    </ul>
+    <div class="must"><p>画像ではテンプレート（NovelTemplate）が選ばれていますが、選ぶのは自分で作ったリポジトリ（例：<code>my-novel</code>）です。</p></div>
+    <div class="note">
+      <p>リポジトリが多いときは、上の検索欄に名前を入力すると見つけやすくなります。画像では、ほかのリポジトリ名をぼかしています。</p>
+      <p>右隣の <code>main</code>（作業の元にする場所）は、そのままで大丈夫です。</p>
+    </div></li>
   <li id="test"><p class="step-main">次の文章をコピーして送ります。ファイルの一覧が返ってくれば成功です。</p>
     <pre class="copyable" data-title="接続の確認">このリポジトリにあるフォルダとファイルの一覧を教えてください。
 ファイルは変更しないでください。</pre>
