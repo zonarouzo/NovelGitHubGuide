@@ -74,7 +74,7 @@
   <summary>Claude との会話を新しくしても大丈夫？</summary>
   <div class="answer">
     <p>大丈夫です。原稿や設定は GitHub に保存されていて、Claude は新しい会話でもそれを読んで作業します。会話の内容そのものは引き継がれないので、必要なことは改めて伝えてください。</p>
-    <p><strong>注意：</strong>前の会話の作業内容を <a href="writing.html#save">main に反映</a>していないと、新しい会話では前回の変更が見えないことがあります。新しい会話を始める前に、反映をすませておきましょう。</p>
+    <p>作業内容は Claude が作業のたびに main（メインの保存場所）に反映するので、新しい会話でも前回の続きから作業できます。</p>
     <p>新しい会話の最初に、次のように頼むと状況を確認できます。</p>
     <div data-prompt="trouble-new-session"></div>
   </div>
@@ -168,7 +168,7 @@
   <div class="answer">
     <p><strong>ブランチ</strong>は、リポジトリの中に作る「作業用の保存場所」です。メインの保存場所は <code>main</code> というブランチで、Claude Code は作業ごとに別のブランチを作って、そこに変更を保存することがあります。</p>
     <p><strong>PR（プルリクエスト）</strong>は、「作業用のブランチの変更を main に取り込みたい」という申請です。PR を「マージ（取り込み）」すると、変更が main に反映されます。</p>
-    <p>将来的には、利用者が PR やブランチを意識しなくてよい仕組みを目指していますが、現在は準備中です。今の手順は <a href="writing.html#save">作業内容の保存と反映</a> をご覧ください。</p>
+    <p>このテンプレートでは、Claude が作業内容を直接 main に反映するので、ふだんは PR やブランチを意識する必要はありません。反映できなかったときだけ、<a href="writing.html#save-failed">手動で反映する方法</a>を使います。</p>
   </div>
 </details>
 <details class="faq">

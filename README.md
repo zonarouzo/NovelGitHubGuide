@@ -92,10 +92,10 @@ screenshots: {
 | `github-authorize` | Claude Code連携 | GitHub の許可の画面 | ★★ |
 | `github-app-install` | Claude Code連携 | Claude に許可するリポジトリを選ぶ画面（GitHub） | ★★★（登録済み） |
 | `claude-code-repo-select` | Claude Code連携 | リポジトリを選ぶ画面 | ★★★（登録済み） |
-| `initial-prompt-sent` | 初期設定 | 初回プロンプトを送信したところ | ★ |
+| `initial-prompt-sent` | 初期設定 | 初回プロンプトを送信したところ（現在ページでは未使用） | — |
 | `github-file-history` | 執筆と管理 | ファイルの変更履歴 | ★ |
-| `claude-code-create-pr` | 執筆と管理 | Claude Code の「Create PR」ボタン | ★★★ |
-| `github-merge-pr` | 執筆と管理 | GitHub の「Merge pull request」ボタン | ★★★ |
+| `claude-code-create-pr` | 執筆と管理 | Claude Code の「Create PR」ボタン（反映に失敗したときだけ使う） | ★ |
+| `github-merge-pr` | 執筆と管理 | GitHub の「Merge pull request」ボタン（反映に失敗したときだけ使う） | ★ |
 
 新しい枠を作るときは、HTML に `<figure class="shot" data-shot="新しいID" data-caption="説明"></figure>` と書きます。
 
@@ -130,7 +130,7 @@ screenshots: {
 次の内容は未確定のため、サイト上で「準備中」「暫定」と明記しています。確定したら更新してください。
 
 - **テンプレートリポジトリのURL**：確定済み（`https://github.com/zonarouzo/NovelTemplate`）。変わった場合は `config.js` の `templateRepoUrl` を更新
-- **main への自動反映**：未検証。現在は「Create PR → Merge pull request」の暫定手順を `writing.html#save` に掲載
+- **main への自動反映**：動作確認済み（テンプレートの CLAUDE.md で、Claude が作業のたびに直接 main に反映）。失敗時の手動の方法（Create PR → Merge pull request）を `writing.html#save-failed` に掲載
 - **初回プロンプト**：テンプレートの最終仕様に合わせて `prompts.js` の `initial-setup` を調整
 - **スクリーンショット**：`template-use-button`・`template-create-form`・`claude-code-repo-select`・`github-app-install` を登録済み。ほかは未登録（枠は非表示。`showScreenshotPlaceholders` で表示切り替え）
 

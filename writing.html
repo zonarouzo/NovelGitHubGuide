@@ -30,15 +30,12 @@
   <ol>
     <li>Claude Code を開いて、小説のリポジトリを選ぶ</li>
     <li>やりたいことを日本語で頼む（下のプロンプト例を使えます）</li>
-    <li>作業が終わったら、<a href="#save">main に反映する</a></li>
+    <li>報告の「保存の状況」で、<a href="#save">main に反映された</a>ことを確認する</li>
   </ol>
   <p class="todo-meta">このページは、必要なところだけ読めばOKです。小さい文字の「補足」と、▶ で開く説明は読み飛ばしても大丈夫です。</p>
 </div>
 
-<div class="must" id="save-summary">
-  <p>作業が終わったら、毎回 <a href="#save">main への反映</a>をしてください。</p>
-  <p class="small">反映しないと、次に新しい会話を始めたとき、Claude が前回の作業内容を見られないことがあります。</p>
-</div>
+<div class="note" id="save-summary"><p>保存は Claude が自動で行います。作業のたびに、GitHub のメインの保存場所（main）に反映されます。</p></div>
 
 <h2 id="flow">原稿の流れ</h2>
 <p><strong>① プロット</strong>（<code>plots/</code>） → <strong>② 第一稿</strong>（<code>drafts/</code>） → <strong>③ 完成原稿</strong>（作品フォルダの直下）の順に育てていきます。</p>
@@ -129,22 +126,20 @@
 </div></details>
 
 <h2 id="save">作業内容の保存と反映</h2>
-<div class="callout callout-pending">
-  <p class="callout-title">🛠 今は暫定の手順です</p>
-  <p>自動で main に反映する仕組みは<strong>準備中（未検証）</strong>です。今は次の手順で反映してください。</p>
-</div>
-<ol class="steps">
-  <li><p class="step-main">Claude の作業が終わったら、Claude Code の画面で <span class="ui">Create PR</span> を押します。</p>
-    <figure class="shot" data-shot="claude-code-create-pr" data-caption="Claude Code の「Create PR」ボタン"></figure></li>
-  <li><p class="step-main">表示されたリンクから GitHub のページを開き、<span class="ui">Merge pull request</span> を押します。</p>
-    <figure class="shot" data-shot="github-merge-pr" data-caption="GitHub の「Merge pull request」ボタン"></figure></li>
-  <li><p class="step-main"><span class="ui">Confirm merge</span> を押します。これで main に反映されます。</p></li>
-</ol>
-<details class="more">
-  <summary>なぜこの手順が必要？<span class="more-tag">知っておくと安心</span></summary>
+<p><strong>Claude が作業のたびに、自動で main（メインの保存場所）に反映します。</strong>あなたが保存の操作をする必要はありません。報告の「保存の状況」に「main に反映しました」とあれば完了です。</p>
+<div class="note"><p>テンプレートの <code>CLAUDE.md</code>（Claude 用のルール）で、作業の前に最新の内容を取り込み、作業のあとに main へ反映するよう指示しています。プルリクエストなどの操作は使いません。</p></div>
+<details class="more" id="save-failed">
+  <summary>「main に反映できませんでした」と報告されたとき</summary>
   <div class="more-body">
-    <p>ブラウザ版の Claude Code は、作業内容を GitHub に保存しますが、保存先は多くの場合 <code>main</code>（メインの保存場所）ではなく、<strong>その作業専用の「ブランチ（作業用の保存場所）」</strong>です。</p>
-    <p><span class="ui">Create PR</span> で作られる「プルリクエスト（PR）」は、「作業用の保存場所の変更を main に取り込みたい」という申請です。<span class="ui">Merge pull request</span> で、その申請を受け入れて main に反映します。くわしくは <a href="faq.html#branch">よくある質問</a> をご覧ください。</p>
+    <p>作業内容は「作業用の保存場所（ブランチ）」には保存されています。次の手順で、手動で main に反映できます。</p>
+    <ol>
+      <li>Claude Code の画面で <span class="ui">Create PR</span> を押します。</li>
+      <li>表示されたリンクから GitHub のページを開き、<span class="ui">Merge pull request</span> を押します。</li>
+      <li><span class="ui">Confirm merge</span> を押します。</li>
+    </ol>
+    <figure class="shot" data-shot="claude-code-create-pr" data-caption="Claude Code の「Create PR」ボタン"></figure>
+    <figure class="shot" data-shot="github-merge-pr" data-caption="GitHub の「Merge pull request」ボタン"></figure>
+    <p>「競合」と報告された場合は、同じ場所が別々に変更されている状態です。Claude にどうすればよいか聞いてください。</p>
   </div>
 </details>
 <details class="more">
