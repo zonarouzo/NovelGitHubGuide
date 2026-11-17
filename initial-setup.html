@@ -28,32 +28,42 @@
 <div class="todo">
   <p class="todo-title">このページでやること</p>
   <ol>
-    <li><a href="#steps">初回プロンプトを送って、サンプルを消し、作品の情報を登録する</a></li>
     <li><a href="#style">（おすすめ）過去作を渡して、自分の文体を覚えてもらう</a></li>
+    <li><a href="#steps">初回プロンプトを送って、サンプルを消し、作品の情報を登録する</a></li>
+    <li><a href="#import">（書いてある原稿がある人）原稿を取り込む</a></li>
+    <li><a href="#finish">最後に main に反映する</a></li>
   </ol>
-  <p class="todo-meta">目安：10〜15分　／　小さい文字の「補足」と、▶ で開く説明は読み飛ばしてもOKです。</p>
+  <p class="todo-meta">目安：15〜30分　／　小さい文字の「補足」と、▶ で開く説明は読み飛ばしてもOKです。</p>
 </div>
 
 <div class="note">
   <p>テンプレートは現在準備中のため、プロンプトの文面や Claude の作業内容は、今後変わることがあります。</p>
 </div>
 
+<p class="step-main">はじめに、<a data-link="claudeCode" href="https://claude.ai/code">Claude Code ↗</a> を開いて、小説のリポジトリを選んでおきます。このページの作業は、すべて同じ会話の中で続けて行えます。</p>
+
+<h2 id="style">1.（おすすめ）自分の文体を覚えてもらう</h2>
+<p>過去に書いた作品を「文体サンプル」として先に渡しておくと、次の初期設定で Claude があなたの文体をルールにまとめ、執筆のときに参考にします。</p>
+<ol class="steps">
+  <li><p class="step-main">過去作から、文体がよく出ている部分をコピーします（1〜2話ぶん、数千字程度）。</p></li>
+  <li><p class="step-main">下のプロンプトの【 】に過去作を貼り付けて送信します。</p>
+    <div data-prompt="style-save"></div>
+    <div class="note"><p>複数の作品を渡したいときは、1作品ずつ送ってください。</p></div></li>
+</ol>
 <details class="more">
-  <summary>初期設定で Claude がすること<span class="more-tag">知っておくと安心</span></summary>
+  <summary>文体サンプルについて<span class="more-tag">知っておくと安心</span></summary>
   <div class="more-body">
-    <p>テンプレートの <code>CLAUDE.md</code>（Claude 用のルール）に従って、次の作業をします。</p>
     <ul>
-      <li>削除するサンプルファイルの一覧を見せて、<strong>あなたに確認する</strong></li>
-      <li>許可を得てから、サンプルの原稿・プロット・スピンオフを削除する</li>
-      <li>設定資料を、あなたの作品用の空のひな形にして、伝えた情報を書き込む</li>
-      <li>作業内容を報告する</li>
+      <li>文体サンプルは <code>settings/style_samples/</code> に保存され、Claude は執筆のたびに参考にします。</li>
+      <li>Claude が文体サンプルを書き換えたり、文章や登場人物を新しい原稿にそのまま使ったりすることはありません。</li>
+      <li>サンプルが長いほど Claude の利用量が増えるので、抜粋がおすすめです。</li>
+      <li>文体サンプルは、あとからいつでも追加できます。</li>
     </ul>
   </div>
 </details>
 
-<h2 id="steps">1. 初回プロンプトを送る</h2>
+<h2 id="steps">2. 初回プロンプトを送る</h2>
 <ol class="steps">
-  <li><p class="step-main"><a data-link="claudeCode" href="https://claude.ai/code">Claude Code ↗</a> を開き、小説のリポジトリを選びます。</p></li>
   <li id="prompt"><p class="step-main">下の初回プロンプトを <span class="ui">コピー</span> して、Claude Code の入力欄に貼り付けます。</p>
     <div data-prompt="initial-setup"></div></li>
   <li><p class="step-main">【 】の部分を自分の作品の内容に書き換えて、送信します。</p>
@@ -61,34 +71,50 @@
     <div class="note"><p>【 】の記号ごと消して書き換えてください。決まっていない項目は空欄のままで大丈夫です。設定はあとからいくらでも追加できます。</p></div></li>
   <li><p class="step-main">Claude が削除するファイルの一覧を見せてきたら、確認して次のように返信します。</p>
     <pre class="copyable" data-title="削除を許可する返信">一覧のファイルを削除してOKです。進めてください。</pre></li>
-  <li><p class="step-main">Claude の報告を待ち、作業内容を main に反映します。</p>
-    <div class="note"><p>反映の方法は <a href="writing.html#save">「作業内容の保存と反映」</a>を参照してください。</p></div></li>
+  <li><p class="step-main">文体サンプルを渡した場合は、文体ルールの案が示されます。内容がよければ「反映してOKです」と返信します。</p></li>
 </ol>
-
 <details class="more">
-  <summary>初期設定がうまくいったか確かめたいとき</summary>
+  <summary>初期設定で Claude がすること・うまくいったか確かめる方法</summary>
   <div class="more-body">
-    <p>次のプロンプトで、今のファイル構成を説明してもらえます。サンプル作品の名前が残っていないか確認しましょう。</p>
+    <ul>
+      <li>削除するサンプルファイルの一覧を見せて、あなたに確認する</li>
+      <li>許可を得てから、サンプルの原稿・プロット・スピンオフを削除する</li>
+      <li>設定資料を、あなたの作品用の空のひな形にして、伝えた情報を書き込む</li>
+      <li>文体サンプルがあれば、文体ルールの案を作って確認する</li>
+    </ul>
+    <p>次のプロンプトで、今のファイル構成を説明してもらえます。</p>
     <div data-prompt="setup-check"></div>
   </div>
 </details>
 
-<h2 id="style">2.（おすすめ）自分の文体を覚えてもらう</h2>
-<p>過去に書いた作品を「文体サンプル」として渡すと、Claude があなたの語り口を参考にして書きます。</p>
+<h2 id="import">3.（書いてある原稿がある人）原稿を取り込む</h2>
+<p>途中まで書いてある作品も、このリポジトリで続きから管理できます。書いてある話を1話ずつ貼り付けて保存してもらいます。</p>
 <ol class="steps">
-  <li><p class="step-main">過去作から、文体がよく出ている部分をコピーします（1〜2話ぶん、数千字程度）。</p></li>
-  <li><p class="step-main">下のプロンプトの【 】に過去作を貼り付けて送信します。</p>
-    <div data-prompt="style-save"></div></li>
-  <li><p class="step-main">続けて下のプロンプトを送り、分析結果がよければ「反映してOKです」と返信します。</p>
-    <div data-prompt="style-analyze"></div></li>
+  <li><p class="step-main">下のプロンプトの【 】を書き換え、原稿を貼り付けて送信します。これを話の数だけくり返します。</p>
+    <div data-prompt="import-paste"></div>
+    <div class="note"><p>「完成原稿として保存して」とはっきり書いた原稿は、完成原稿として保存されます。まだ直す予定の話は「第一稿」にしておきましょう。本文は一字一句そのまま保存されます。</p></div></li>
+  <li><p class="step-main">全部取り込んだら、下のプロンプトで設定資料とプロットの案を作ってもらいます。案を見て、よければ「保存してOKです」と返信します。</p>
+    <div data-prompt="import-make-settings"></div></li>
 </ol>
-<div class="note">
-  <ul>
-    <li>文体サンプルは <code>settings/style_samples/</code> に保存され、Claude は執筆のたびに参考にします。</li>
-    <li>Claude が文体サンプルを書き換えたり、文章や登場人物を新しい原稿にそのまま使ったりすることはありません。</li>
-    <li>サンプルが長いほど Claude の利用量が増えるので、抜粋がおすすめです。</li>
-  </ul>
-</div>
+<details class="more">
+  <summary>話数が多くて、1話ずつ貼り付けるのが大変なとき（ファイルをまとめてアップロード）</summary>
+  <div class="more-body">
+    <p>原稿が <code>.txt</code> ファイルになっている場合は、GitHub の画面からまとめてアップロードできます。</p>
+    <ol>
+      <li><strong>先に、ここまでの作業を main に反映しておきます</strong>（<a href="#finish">4. の手順</a>）。</li>
+      <li>GitHub で小説のリポジトリを開き、<code>novels</code> → <code>drafts</code> フォルダを開きます。</li>
+      <li><span class="ui">Add file</span> → <span class="ui">Upload files</span> を選び、原稿ファイルをまとめてドラッグして入れます。</li>
+      <li>画面下の <span class="ui">Commit changes</span> を押して保存します。</li>
+      <li>Claude Code で新しく会話を始め、下のプロンプトで整理してもらいます（ファイル名の付け直しなど）。</li>
+    </ol>
+    <div data-prompt="import-upload"></div>
+    <p>ボタンの表記は変わることがあります。Word などの <code>.txt</code> 以外のファイルは、テキストとして貼り付けるか <code>.txt</code> で保存し直してください。文字化けしている場合は、Claude が変換してよいか確認してきます。</p>
+  </div>
+</details>
+
+<h2 id="finish">4. 最後に main に反映する</h2>
+<p class="step-main">Claude の報告を確認したら、作業内容を main に反映します。方法は <a href="writing.html#save">「作業内容の保存と反映」</a>を見てください。</p>
+<div class="note"><p>原稿をまとめてアップロードした場合は、アップロードした時点で main に保存されています。そのあと Claude に整理してもらった内容は、反映が必要です。</p></div>
 </article>
 <!-- ===== ここまで本文 ===== -->
 
