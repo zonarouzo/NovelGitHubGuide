@@ -24,142 +24,131 @@
 <!-- ===== ここから本文 ===== -->
 <article>
 <h1>小説の執筆と管理</h1>
-<p class="lead">ここからは、ふだんの執筆の進め方です。基本は「Claude Code を開く → リポジトリを選ぶ → 日本語で頼む」の繰り返しです。</p>
 
-<nav class="toc" aria-label="このページの目次">
-  <p>このページの内容</p>
+<div class="todo">
+  <p class="todo-title">いつもの流れ</p>
   <ol>
-    <li><a href="#flow">原稿の流れ</a></li>
-    <li><a href="#plot">プロットの作成・保存</a></li>
-    <li><a href="#draft">第一稿の執筆</a></li>
-    <li><a href="#revise">第一稿の修正</a></li>
-    <li><a href="#final">完成原稿としての保存</a></li>
-    <li><a href="#character">キャラクター設定の追加・変更</a></li>
-    <li><a href="#world">世界観設定の管理</a></li>
-    <li><a href="#style">文体の管理</a></li>
-    <li><a href="#spinoff">スピンオフの作成・管理</a></li>
-    <li><a href="#history">過去の原稿の確認・復元</a></li>
-    <li><a href="#save">作業内容の保存と反映</a></li>
+    <li>Claude Code を開いて、小説のリポジトリを選ぶ</li>
+    <li>やりたいことを日本語で頼む（下のプロンプト例を使えます）</li>
+    <li>作業が終わったら、<a href="#save">main に反映する</a></li>
   </ol>
-</nav>
+  <p class="todo-meta">このページは、必要なところだけ読めばOKです。小さい文字の「補足」と、▶ で開く説明は読み飛ばしても大丈夫です。</p>
+</div>
+
+<div class="must" id="save-summary">
+  <p>作業が終わったら、毎回 <a href="#save">main への反映</a>をしてください。</p>
+  <p class="small">反映しないと、次に新しい会話を始めたとき、Claude が前回の作業内容を見られないことがあります。</p>
+</div>
 
 <h2 id="flow">原稿の流れ</h2>
-<p>テンプレートでは、原稿は次の順番で育てていきます。</p>
-<div class="table-wrap"><table>
-  <tr><th>段階</th><th>置き場所（本編の場合）</th><th>形式</th></tr>
-  <tr><td>① プロット</td><td><code>novels/plots/</code></td><td>.md</td></tr>
-  <tr><td>② 第一稿・書きかけ</td><td><code>novels/drafts/</code></td><td>.txt</td></tr>
-  <tr><td>③ 完成原稿</td><td><code>novels/</code> の直下</td><td>.txt</td></tr>
-</table></div>
-<div class="callout callout-tip">
-  <p class="callout-title">🛡 テンプレートのルール（CLAUDE.md）で守られていること</p>
-  <ul>
-    <li>完成原稿は、あなたがはっきり指示しない限り変更されません</li>
-    <li>原稿の削除は、あなたの許可が必要です</li>
-    <li>第一稿を完成原稿にするのも、あなたの指示があったときだけです</li>
-    <li>共通設定とスピンオフの設定が食い違っていたら、Claude はあなたに確認します</li>
-    <li>Claude は、既存の原稿や設定を読んでから執筆します</li>
-  </ul>
-</div>
-<p>プロンプトの【 】の部分は、自分の内容に書き換えて使ってください。</p>
+<p><strong>① プロット</strong>（<code>plots/</code>） → <strong>② 第一稿</strong>（<code>drafts/</code>） → <strong>③ 完成原稿</strong>（作品フォルダの直下）の順に育てていきます。</p>
+<details class="more">
+  <summary>テンプレートのルールで守られていること<span class="more-tag">知っておくと安心</span></summary>
+  <div class="more-body">
+    <ul>
+      <li>完成原稿は、あなたがはっきり指示しない限り変更されません</li>
+      <li>原稿の削除は、あなたの許可が必要です</li>
+      <li>第一稿を完成原稿にするのも、あなたの指示があったときだけです</li>
+      <li>共通設定とスピンオフの設定が食い違っていたら、Claude はあなたに確認します</li>
+      <li>Claude は、既存の原稿・設定・文体サンプルを読んでから執筆します</li>
+    </ul>
+    <p>原稿は <code>.txt</code>、プロットや設定資料は <code>.md</code> で保存されます。</p>
+  </div>
+</details>
+<div class="note"><p>プロンプトの【 】の部分は、自分の内容に書き換えて使ってください。ふだんの言葉で頼んでも大丈夫です。</p></div>
 
-<h2 id="plot">プロットの作成・保存</h2>
-<p>各話のあらすじや展開をまとめた「プロット」を作ります。Claude はこれまでの原稿や設定を読んでから作り、<code>plots/</code> フォルダに保存します。</p>
+<h2 id="plot">プロットを作る</h2>
 <div data-prompt="plot-create"></div>
-<p>まずは案を出してもらってから選びたい場合は、こちらが便利です。</p>
-<div data-prompt="plot-ideas"></div>
+<details class="more"><summary>案をいくつか出してもらってから選びたいとき</summary><div class="more-body">
+  <div data-prompt="plot-ideas"></div>
+</div></details>
 
-<h2 id="draft">第一稿の執筆</h2>
-<p>プロットをもとに、第一稿を書いてもらいます。第一稿は <code>drafts/</code> フォルダに保存されます。</p>
+<h2 id="draft">第一稿を書く</h2>
 <div data-prompt="draft-write"></div>
-<div class="callout">
-  <p class="callout-title">✍️ 自分で書いた原稿を入れたいとき</p>
-  <p>自分で書いた文章を Claude Code の入力欄に貼り付けて、「これを第◯話の第一稿として保存して」と頼むこともできます。</p>
-</div>
+<div class="note"><p>自分で書いた文章を入力欄に貼り付けて、「これを第◯話の第一稿として保存して」と頼むこともできます。</p></div>
 
-<h2 id="revise">第一稿の修正</h2>
-<p>直してほしいところを、できるだけ具体的に伝えます。</p>
+<h2 id="revise">第一稿を直す</h2>
 <div data-prompt="revise-draft"></div>
-<p>直す前に意見だけほしいときは、「ファイルは変更しないで」と書き添えます。</p>
-<div data-prompt="revise-review"></div>
+<details class="more"><summary>直す前に、意見だけほしいとき</summary><div class="more-body">
+  <div data-prompt="revise-review"></div>
+</div></details>
 
-<h2 id="final">完成原稿としての保存</h2>
-<p>第一稿が仕上がったら、完成原稿にします。<strong>「完成原稿にして」とはっきり伝えたときだけ</strong>、Claude は第一稿を完成原稿の場所に移します。</p>
+<h2 id="final">完成原稿にする</h2>
+<p><strong>「完成原稿にして」とはっきり伝えたときだけ</strong>、第一稿が完成原稿になります。</p>
 <div data-prompt="finalize"></div>
-<p>完成原稿をあとから直したいときは、「完成原稿の」と明記して頼みます。</p>
-<div data-prompt="fix-final"></div>
+<details class="more"><summary>完成原稿をあとから直したいとき</summary><div class="more-body">
+  <p>「完成原稿の」と明記して頼みます。</p>
+  <div data-prompt="fix-final"></div>
+</div></details>
 
-<h2 id="character">キャラクター設定の追加・変更</h2>
-<p>キャラクターの設定は <code>settings/characters.md</code> などにまとめて保存されます。</p>
+<h2 id="character">キャラクター設定を追加・変更する</h2>
 <div data-prompt="character-add"></div>
-<div data-prompt="character-update"></div>
+<details class="more"><summary>既存のキャラクター設定を変更したいとき</summary><div class="more-body">
+  <div data-prompt="character-update"></div>
+</div></details>
 
-<h2 id="world">世界観設定の管理</h2>
-<p>舞台・歴史・ルールなどの世界観は <code>settings/</code> フォルダの資料にまとめます。原稿に出てきた新しい設定を、資料に反映してもらうこともできます。</p>
+<h2 id="world">世界観設定を管理する</h2>
 <div data-prompt="world-add"></div>
-<div data-prompt="settings-from-draft"></div>
-<p>設定と原稿の食い違いが気になったら、矛盾チェックを頼みましょう。</p>
-<div data-prompt="check-all"></div>
+<details class="more"><summary>原稿に出てきた新しい設定を資料にまとめる・矛盾を調べる</summary><div class="more-body">
+  <div data-prompt="settings-from-draft"></div>
+  <div data-prompt="check-all"></div>
+</div></details>
 
-<h2 id="style">文体の管理</h2>
-<p>Claude は、<code>settings/style_guide.md</code>（文体・表記のルール）と、<code>settings/style_samples/</code>（あなたの過去作などの文体サンプル）を読んでから執筆します。文体サンプルはあとから何本でも追加できます。</p>
+<h2 id="style">文体を管理する</h2>
+<p>過去作などの文体サンプルは、あとから何本でも追加できます。</p>
 <div data-prompt="style-save"></div>
-<div data-prompt="style-analyze"></div>
-<div data-prompt="style-check"></div>
+<details class="more"><summary>文体を分析してもらう・原稿が文体に合っているか確かめる</summary><div class="more-body">
+  <div data-prompt="style-analyze"></div>
+  <div data-prompt="style-check"></div>
+</div></details>
 
-<h2 id="spinoff">スピンオフの作成・管理</h2>
-<p>スピンオフは <code>spinoffs/</code> フォルダの中に、作品ごとのフォルダを作って管理します。共通の設定は本編と共有し、そのスピンオフだけの設定は専用の <code>settings/</code> に保存します。</p>
+<h2 id="spinoff">スピンオフを作る・管理する</h2>
 <div data-prompt="spinoff-create"></div>
-<div data-prompt="spinoff-plot"></div>
-<div data-prompt="check-spinoff"></div>
+<details class="more"><summary>スピンオフのプロット作成・矛盾チェック</summary><div class="more-body">
+  <p>スピンオフは <code>spinoffs/</code> の中に作品ごとのフォルダで管理し、共通の設定は本編と共有します。</p>
+  <div data-prompt="spinoff-plot"></div>
+  <div data-prompt="check-spinoff"></div>
+</div></details>
 
-<h2 id="history">過去の原稿の確認・復元</h2>
-<p>GitHub には、保存のたびに変更の履歴が残ります。</p>
-<h3>Claude に頼む</h3>
-<div data-prompt="history"></div>
+<h2 id="history">過去の原稿を確認・復元する</h2>
 <div data-prompt="restore"></div>
-<h3>GitHub の画面で見る</h3>
-<ol class="steps">
-  <li><p>GitHub で自分の小説リポジトリを開き、見たいファイル（例：<code>novels/episode01.txt</code>）をクリックします。</p></li>
-  <li><p>ファイルの上のほうにある <span class="ui">History</span>（履歴）をクリックすると、変更の一覧が表示されます。</p>
-    <figure class="shot" data-shot="github-file-history" data-caption="ファイルの変更履歴"></figure></li>
-  <li><p>一覧の項目をクリックすると、そのときに何が変わったかを確認できます。</p></li>
-</ol>
-<p class="small">履歴に残るのは、GitHub に保存（反映）された変更です。</p>
+<details class="more"><summary>変更履歴を見たいとき（Claude に頼む・GitHub の画面で見る）</summary><div class="more-body">
+  <div data-prompt="history"></div>
+  <h3>GitHub の画面で見る</h3>
+  <ol>
+    <li>GitHub で小説のリポジトリを開き、見たいファイルをクリックします。</li>
+    <li>ファイルの上のほうにある <span class="ui">History</span> を押すと、変更の一覧が表示されます。</li>
+  </ol>
+  <figure class="shot" data-shot="github-file-history" data-caption="ファイルの変更履歴"></figure>
+  <p>履歴に残るのは、GitHub に保存（反映）された変更です。</p>
+</div></details>
 
 <h2 id="save">作業内容の保存と反映</h2>
 <div class="callout callout-pending">
-  <p class="callout-title">🛠 自動で main に反映する仕組みは準備中です</p>
-  <p>Claude の作業内容を、利用者の操作なしで「main（メインの保存場所）」に反映する仕組みを準備していますが、<strong>まだ検証が終わっていません</strong>。現時点では、下の<strong>暫定の手順</strong>で反映してください。</p>
+  <p class="callout-title">🛠 今は暫定の手順です</p>
+  <p>自動で main に反映する仕組みは<strong>準備中（未検証）</strong>です。今は次の手順で反映してください。</p>
 </div>
-
-<h3>今の保存のしくみ</h3>
-<p>ブラウザ版の Claude Code は、作業が終わると、変更内容を GitHub に保存します。ただし保存先は、多くの場合 <code>main</code> ではなく、<strong>その作業専用の「ブランチ（作業用の保存場所）」</strong>です。</p>
-<p>そのままにしておくと、<code>main</code> の原稿は古いままです。次に新しい会話を始めたとき、Claude が前回の作業内容を見られないことがあります。</p>
-
-<h3>暫定の手順：作業内容を main に反映する</h3>
 <ol class="steps">
-  <li><p>Claude の作業が終わったら、Claude Code の画面に表示される変更内容の欄で <span class="ui">Create PR</span> をクリックします。</p>
+  <li><p class="step-main">Claude の作業が終わったら、Claude Code の画面で <span class="ui">Create PR</span> を押します。</p>
     <figure class="shot" data-shot="claude-code-create-pr" data-caption="Claude Code の「Create PR」ボタン"></figure></li>
-  <li><p>「プルリクエスト（PR）」という「変更を main に取り込むための申請」が GitHub に作られます。表示されたリンクから、GitHub のページを開きます。</p></li>
-  <li><p>GitHub のページで、内容を確認し、<span class="ui">Merge pull request</span> をクリックします。</p>
+  <li><p class="step-main">表示されたリンクから GitHub のページを開き、<span class="ui">Merge pull request</span> を押します。</p>
     <figure class="shot" data-shot="github-merge-pr" data-caption="GitHub の「Merge pull request」ボタン"></figure></li>
-  <li><p><span class="ui">Confirm merge</span> をクリックします。これで作業内容が <code>main</code> に反映されます。</p></li>
+  <li><p class="step-main"><span class="ui">Confirm merge</span> を押します。これで main に反映されます。</p></li>
 </ol>
-<div class="callout">
-  <p class="callout-title">ℹ️ 保存できたか不安なときは</p>
-  <p>Claude に次のように聞くと、今の状態を説明してもらえます。</p>
-</div>
-<div data-prompt="trouble-save-status"></div>
-<p class="small">ブランチやプルリクエストについては <a href="faq.html#branch">よくある質問</a> でも説明しています。</p>
-
-<h2>このページのまとめ</h2>
-<ul>
-  <li>プロット → 第一稿 → 完成原稿 の流れで執筆する</li>
-  <li>設定資料やスピンオフも Claude に頼んで管理できる</li>
-  <li>作業が終わったら、main への反映を忘れずに（現在は暫定の手順）</li>
-</ul>
-<p>ほかの指示の例は <a href="prompts.html">プロンプト集</a> にまとめています。</p>
+<details class="more">
+  <summary>なぜこの手順が必要？<span class="more-tag">知っておくと安心</span></summary>
+  <div class="more-body">
+    <p>ブラウザ版の Claude Code は、作業内容を GitHub に保存しますが、保存先は多くの場合 <code>main</code>（メインの保存場所）ではなく、<strong>その作業専用の「ブランチ（作業用の保存場所）」</strong>です。</p>
+    <p><span class="ui">Create PR</span> で作られる「プルリクエスト（PR）」は、「作業用の保存場所の変更を main に取り込みたい」という申請です。<span class="ui">Merge pull request</span> で、その申請を受け入れて main に反映します。くわしくは <a href="faq.html#branch">よくある質問</a> をご覧ください。</p>
+  </div>
+</details>
+<details class="more">
+  <summary>保存できているか不安なとき</summary>
+  <div class="more-body">
+    <div data-prompt="trouble-save-status"></div>
+  </div>
+</details>
+<p class="small">ほかの指示の例は <a href="prompts.html">プロンプト集</a> にまとめています。</p>
 </article>
 <!-- ===== ここまで本文 ===== -->
 

@@ -354,3 +354,66 @@ details.faq .answer > :last-child { margin-bottom: 0; }
 
 /* ページ内リンクで飛んだとき、見出しが固定ヘッダーに隠れないようにする */
 [id] { scroll-margin-top: 120px; }
+
+/* =========================================================
+   読む優先度の部品
+   ・通常の文字 …… 必ず読むこと（手順・注意）
+   ・.todo ……… ページ冒頭の「このページでやること」
+   ・.note ……… 補足（小さい文字。読み飛ばしてもOK）
+   ・details.more … くわしい説明（クリックで開く。読み飛ばしてもOK）
+   ========================================================= */
+.todo {
+  background: var(--surface); border: 2px solid #c9bff0; border-radius: var(--radius);
+  padding: 14px 18px; margin: 0.6em 0 1.6em; box-shadow: var(--shadow);
+}
+.todo-title { font-weight: 700; color: var(--primary-dark); margin: 0 0 0.3em; }
+.todo ol { margin: 0 0 0.4em; font-weight: 600; }
+.todo-meta { margin: 0; font-size: 0.82rem; color: var(--text-sub); }
+
+.note {
+  font-size: 0.86rem; line-height: 1.8; color: var(--text-sub);
+  border-left: 3px solid #e3dbcf; padding: 2px 0 2px 12px; margin: 0.6em 0 1.2em;
+}
+.note::before {
+  content: "補足"; display: inline-block; font-size: 0.72rem; font-weight: 700; line-height: 1.6;
+  padding: 0 8px; margin-bottom: 2px; border-radius: 999px; background: #f1ece5; color: var(--text-sub);
+}
+.note p, .note ul, .note ol { margin: 0 0 0.4em; }
+.note > :last-child { margin-bottom: 0; }
+.note .table-wrap { margin: 0.4em 0; }
+.note table { font-size: 0.84rem; }
+
+details.more {
+  margin: 0.6em 0 1.2em; border: 1px dashed #dcd2c4; border-radius: 10px; background: #fffdf9;
+  font-size: 0.88rem; color: var(--text-sub);
+}
+details.more > summary {
+  cursor: pointer; padding: 8px 14px; font-weight: 700; color: var(--text-sub); list-style: none;
+}
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::before { content: "▶ "; font-size: 0.75em; }
+details.more[open] > summary::before { content: "▼ "; }
+details.more > summary .more-tag {
+  font-size: 0.72rem; font-weight: 700; padding: 0 8px; border-radius: 999px;
+  background: #f1ece5; margin-left: 6px; vertical-align: 0.1em;
+}
+.more-body { padding: 0 14px 12px; line-height: 1.8; }
+.more-body > :last-child { margin-bottom: 0; }
+.more-body h3 { font-size: 0.98rem; color: var(--text); margin: 1em 0 0.4em; }
+.more-body table { font-size: 0.84rem; }
+
+/* 手順の中の補足は、さらに控えめに */
+.steps .note { margin: 0.4em 0 0; }
+.step-main { font-weight: 600; }
+
+/* 必ず読む注意は、はっきり目立たせる */
+.must {
+  border-radius: var(--radius); padding: 12px 16px; margin: 1.2em 0;
+  background: var(--pink-soft); border: 2px solid var(--pink-line);
+}
+.must::before {
+  content: "必ず確認"; display: inline-block; font-size: 0.75rem; font-weight: 700;
+  padding: 0 10px; border-radius: 999px; background: #c2415d; color: #fff; margin-bottom: 4px;
+}
+.must > :last-child { margin-bottom: 0; }
+.must p { font-weight: 600; }

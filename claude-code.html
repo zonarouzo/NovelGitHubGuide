@@ -24,127 +24,89 @@
 <!-- ===== ここから本文 ===== -->
 <article>
 <h1>Claude Codeとの連携</h1>
-<p class="lead">ブラウザ版の Claude Code を、あなたの GitHub のリポジトリとつなぎます。</p>
 
-<nav class="toc" aria-label="このページの目次">
-  <p>このページの内容</p>
+<div class="todo">
+  <p class="todo-title">このページでやること</p>
   <ol>
-    <li><a href="#what">Claude Code とは</a></li>
-    <li><a href="#diff">ふつうの Claude チャットとの違い</a></li>
     <li><a href="#open">Claude Code を開く</a></li>
-    <li><a href="#connect">GitHub と連携する</a></li>
-    <li><a href="#select">リポジトリを選ぶ</a></li>
-    <li><a href="#test">つながったか確かめる</a></li>
-    <li><a href="#trouble">うまくいかないとき</a></li>
+    <li><a href="#connect">GitHub とつなぎ、Claude にリポジトリの使用を許可する</a></li>
+    <li><a href="#select">小説のリポジトリを選び、つながったか確かめる</a></li>
   </ol>
-</nav>
+  <p class="todo-meta">目安：10分　／　小さい文字の「補足」と、▶ で開く説明は読み飛ばしてもOKです。</p>
+</div>
 
-<h2 id="what">Claude Code とは</h2>
-<p>Claude Code は、Claude が<strong>ファイルを直接読んだり、書いたり、保存したりできる</strong>作業モードです。ブラウザ版では、Anthropic（Claude の提供元）が用意したクラウド上の作業スペースに、あなたの GitHub のリポジトリを取り込んで作業します。</p>
-<p>Anthropic の公式ドキュメントでは、ブラウザ版の Claude Code は <strong>Pro・Max などのプランで利用できる</strong>と案内されています。</p>
-<p class="small">参考：<a data-link="claudeCodeWebDocs" href="https://code.claude.com/docs/en/web-quickstart">Claude Code 公式ドキュメント（英語）↗</a></p>
+<details class="more" id="what">
+  <summary>Claude Code とは？ ふつうのチャットとの違いは？<span class="more-tag">知っておくと安心</span></summary>
+  <div class="more-body">
+    <p>Claude Code は、Claude が<strong>ファイルを直接読んだり、書いたり、保存したりできる</strong>作業モードです。ブラウザ版では、クラウド上の作業スペースにあなたのリポジトリを取り込んで作業します。公式ドキュメントでは、Pro・Max などのプランで利用できると案内されています。</p>
+    <div class="table-wrap"><table>
+      <tr><th></th><th>ふつうのチャット</th><th>Claude Code</th></tr>
+      <tr><td>ファイル</td><td>自分で貼り付ける</td><td>Claude が自分で読む</td></tr>
+      <tr><td>書いた文章</td><td>会話に表示されるだけ</td><td>ファイルとして作成・修正</td></tr>
+      <tr><td>保存</td><td>自分でコピーして保存</td><td>Claude が GitHub に保存</td></tr>
+    </table></div>
+    <p>どちらも同じアカウントで使え、利用量はプランの上限を共有します。参考：<a data-link="claudeCodeWebDocs" href="https://code.claude.com/docs/en/web-quickstart">Claude Code 公式ドキュメント（英語）↗</a></p>
+  </div>
+</details>
 
-<h2 id="diff">ふつうの Claude チャットとの違い</h2>
-<div class="table-wrap"><table>
-  <tr><th></th><th>ふつうのチャット（claude.ai）</th><th>Claude Code</th></tr>
-  <tr><td>ファイル</td><td>自分で貼り付けたりアップロードしたりする</td><td>リポジトリのファイルを Claude が自分で読む</td></tr>
-  <tr><td>書いた文章</td><td>会話の中に表示されるだけ</td><td>ファイルとして作成・修正できる</td></tr>
-  <tr><td>保存</td><td>自分でコピーして保存する</td><td>Claude が GitHub に保存する</td></tr>
-  <tr><td>向いていること</td><td>相談・アイデア出し</td><td>原稿や設定資料の作成・整理・管理</td></tr>
-</table></div>
-<p class="small">どちらも同じ Claude のアカウントで使えます。利用量はプランの利用上限を共有します。</p>
-
-<h2 id="open">Claude Code を開く</h2>
+<h2 id="open">1. Claude Code を開く</h2>
 <ol class="steps">
-  <li><p>パソコンのブラウザで、Claude Code のページを開きます。</p>
-    <p><a data-link="claudeCode" href="https://claude.ai/code">claude.ai/code を開く ↗</a></p></li>
-  <li><p>Claude Pro を契約しているアカウントでログインします。</p>
+  <li><p class="step-main"><a data-link="claudeCode" href="https://claude.ai/code">claude.ai/code ↗</a> を開き、Claude Pro のアカウントでログインします。</p>
     <figure class="shot" data-shot="claude-code-top" data-caption="Claude Code の最初の画面"></figure></li>
 </ol>
 
-<h2 id="connect">GitHub と連携する</h2>
-<p>はじめて開いたときは、GitHub との連携を求められます。</p>
+<h2 id="connect">2. GitHub とつなぐ</h2>
 <ol class="steps">
-  <li><p>画面の案内に従って、GitHub との連携を始めます。GitHub の「許可（認可）」のページが開きます。</p></li>
-  <li><p>内容を確認して許可します。終わると Claude Code の画面に戻ります。</p>
-    <figure class="shot" data-shot="github-authorize" data-caption="GitHub の許可の画面"></figure></li>
-  <li><p><strong>GitHub の中で、Claude にリポジトリへの出入りを許可します。</strong>非公開（Private）のリポジトリで作業するには、この許可が必要です。</p>
-    <p>手続きの名前は「Claude GitHub App のインストール」ですが、<strong>パソコンやスマホに何かを入れるものではありません</strong>。GitHub のページ上で「Claude がどのリポジトリを使ってよいか」を設定するだけです。</p>
-    <p><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">許可の設定ページ（GitHub）を開く ↗</a></p></li>
-  <li><p>許可するリポジトリの範囲を選び、画面の案内に従って保存します。どちらを選ぶかは、下の表を参考にしてください。</p>
-    <figure class="shot" data-shot="github-app-install" data-caption="Claude に許可するリポジトリを選ぶ画面（GitHub）"></figure></li>
+  <li><p class="step-main">画面の案内に従って GitHub との連携を始め、GitHub の許可のページで許可します。</p>
+    <figure class="shot" data-shot="github-authorize" data-caption="GitHub の許可の画面"></figure>
+    <div class="note"><p>許可が終わると Claude Code の画面に戻ります。</p></div></li>
+  <li><p class="step-main"><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">許可の設定ページ（GitHub）↗</a>を開き、Claude が使ってよいリポジトリを選んで保存します。</p>
+    <figure class="shot" data-shot="github-app-install" data-caption="Claude に許可するリポジトリを選ぶ画面（GitHub）"></figure>
+    <div class="note"><p>この手続きは「Claude GitHub App のインストール」と呼ばれますが、<strong>パソコンやスマホに何かを入れるものではありません</strong>。GitHub のページ上で設定するだけです。非公開のリポジトリを使うには、この設定が必要です。</p></div></li>
 </ol>
 
-<h3 id="app-scope">どのリポジトリを許可する？</h3>
-<div class="cards">
-  <div class="card">
-    <h3><span class="ui">All repositories</span><br>すべてのリポジトリ</h3>
-    <p><strong>向いている人：</strong>GitHub を小説のためだけに使う人。複数の作品をそれぞれのリポジトリで管理する人。</p>
-    <p><strong>注意点：</strong>新しく作ったリポジトリも、自動で Claude が使えるようになります。小説以外の大事なリポジトリがある場合は、それも対象になります。</p>
-  </div>
-  <div class="card">
-    <h3><span class="ui">Only select repositories</span><br>選んだリポジトリだけ</h3>
-    <p><strong>向いている人：</strong>GitHub で小説以外のもの（仕事・ほかの活動など）も管理している人。</p>
-    <p><strong>注意点：</strong>作品のリポジトリを増やすたびに、この設定ページで追加が必要です。</p>
-  </div>
+<h3 id="app-scope">どちらを選ぶ？</h3>
+<p><strong>GitHub を小説専用に使うなら <span class="ui">All repositories</span>（すべてのリポジトリ）がおすすめです。</strong>作品ごとにリポジトリを増やしても、追加の設定がいりません。</p>
+<div class="note">
+  <p>GitHub で小説以外の大事なもの（仕事など）も管理している場合は、<span class="ui">Only select repositories</span>（選んだリポジトリだけ）にして、小説のリポジトリだけを選んでください。その場合、作品のリポジトリを増やすたびに、この設定ページで追加が必要です。</p>
+  <p>どちらを選んでも、Claude が作業するのは Claude Code の画面で選んだリポジトリだけです。設定はあとから変更できます。</p>
 </div>
-<div class="callout callout-tip">
-  <p class="callout-title">💡 迷ったら</p>
-  <p>この GitHub アカウントを小説専用に使うなら、<strong>All repositories</strong> が手間がかからずおすすめです。どちらを選んでも、あとから設定ページで変更できます。</p>
-  <p>どちらの場合も、Claude が作業するのは、あなたが Claude Code の画面で選んだリポジトリです。</p>
-</div>
-<p class="small">Pro プランでは、作業用の環境（Default）が自動で用意されると案内されています。特別な設定は不要です。</p>
 
-<h2 id="select">リポジトリを選ぶ</h2>
+<h2 id="select">3. リポジトリを選んで確かめる</h2>
 <ol class="steps">
-  <li><p>Claude Code の画面で、文字を入力する欄の近くにある<strong>リポジトリの選択欄</strong>をクリックします。</p></li>
-  <li><p>一覧から、ステップ2で作った小説管理リポジトリを選びます。</p>
-    <figure class="shot" data-shot="claude-code-repo-select" data-caption="リポジトリを選ぶ画面"></figure></li>
-  <li><p>ブランチ（作業の元にする場所）の選択欄がある場合は、<code>main</code> のままにします。</p></li>
-</ol>
-
-<h2 id="test">つながったか確かめる</h2>
-<p>次の文章をコピーして Claude Code に送ってみましょう。ファイルを変更せずに、中身の一覧を答えてもらうだけの指示です。</p>
-<pre class="copyable" data-title="接続の確認">このリポジトリにあるフォルダとファイルの一覧を教えてください。
+  <li><p class="step-main">入力欄の近くにある<strong>リポジトリの選択欄</strong>で、小説のリポジトリを選びます。</p>
+    <figure class="shot" data-shot="claude-code-repo-select" data-caption="リポジトリを選ぶ画面"></figure>
+    <div class="note"><p>ブランチ（作業の元にする場所）の選択欄がある場合は、<code>main</code> のままにします。</p></div></li>
+  <li id="test"><p class="step-main">次の文章をコピーして送ります。ファイルの一覧が返ってくれば成功です。</p>
+    <pre class="copyable" data-title="接続の確認">このリポジトリにあるフォルダとファイルの一覧を教えてください。
 ファイルは変更しないでください。</pre>
-<p><code>CLAUDE.md</code>、<code>settings</code>、<code>novels</code>、<code>spinoffs</code> などが一覧に出てくれば、連携は成功です。</p>
-<div class="callout">
-  <p class="callout-title">ℹ️ 会話ごとに「セッション」ができます</p>
-  <p>Claude Code では、依頼ごとに「セッション」（ひとまとまりの作業）が作られます。ブラウザのタブを閉じても、作業は止まらずに続きます。</p>
-</div>
+    <div class="note"><p>一覧に <code>CLAUDE.md</code>、<code>settings</code>、<code>novels</code> などが出てくればOKです。ブラウザのタブを閉じても、Claude の作業は止まりません。</p></div></li>
+</ol>
 
 <h2 id="trouble">うまくいかないとき</h2>
 <details class="faq">
   <summary>リポジトリの一覧に、自分の小説リポジトリが出てこない</summary>
   <div class="answer">
-    <p>非公開のリポジトリは、<strong>GitHub の設定で Claude にそのリポジトリへの許可（Claude GitHub App のインストール）がされている</strong>場合だけ表示されます。</p>
+    <p>Claude にそのリポジトリの使用が許可されていない可能性があります。</p>
     <ol>
       <li><a data-link="claudeGithubApp" href="https://github.com/apps/claude/installations/new">許可の設定ページ（GitHub）↗</a>を開きます。</li>
-      <li>自分のアカウントを選び、許可するリポジトリに小説のリポジトリが含まれているか確認します。含まれていなければ追加して保存します。</li>
-      <li>Claude Code の画面を再読み込みして、もう一度選択欄を確認します。</li>
+      <li>自分のアカウントを選び、小説のリポジトリが許可に含まれているか確認します。なければ追加して保存します。</li>
+      <li>Claude Code の画面を再読み込みします。</li>
     </ol>
   </div>
 </details>
 <details class="faq">
   <summary>「Claude Code isn't available on your account」と表示される</summary>
   <div class="answer">
-    <p>使っているアカウントやプランで Claude Code が使えない状態です。Claude Pro（または上位プラン）を契約しているアカウントでログインしているか確認してください。会社などの組織アカウントの場合は、管理者の設定が必要なことがあります。</p>
+    <p>Claude Pro（または上位プラン）のアカウントでログインしているか確認してください。会社などの組織アカウントの場合は、管理者の設定が必要なことがあります。</p>
   </div>
 </details>
 <details class="faq">
   <summary>GitHub の許可の画面でエラーになる・途中で止まった</summary>
   <div class="answer">
-    <p>GitHub に正しいアカウントでログインしているか確認してから、Claude Code のページを開き直して、連携をやり直してください。二段階認証のコードを求められた場合は、認証アプリの数字を入力します。</p>
+    <p>GitHub に正しいアカウントでログインしているか確認し、Claude Code のページを開き直して連携をやり直してください。</p>
   </div>
 </details>
-<p>そのほかの困りごとは <a href="faq.html">よくある質問・トラブル解決</a> をご覧ください。</p>
-
-<h2>このページのまとめ</h2>
-<ul>
-  <li>Claude Code を開き、GitHub と連携した</li>
-  <li>GitHub の設定で、Claude に小説リポジトリへの許可を与えた</li>
-  <li>リポジトリを選んで、ファイル一覧を答えてもらえた</li>
-</ul>
 </article>
 <!-- ===== ここまで本文 ===== -->
 
