@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ページが見つかりません｜ClaudeとGitHubではじめる小説管理</title>
+<style>
+  body { margin: 0; background: #fffaf4; color: #352f3d; font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif; line-height: 1.9; }
+  main { max-width: 640px; margin: 0 auto; padding: 64px 16px; text-align: center; }
+  h1 { font-size: 1.5rem; }
+  a.button { display: inline-block; background: #6b5bc4; color: #fff; text-decoration: none; font-weight: 700; padding: 12px 28px; border-radius: 999px; }
+</style>
+</head>
+<body>
+<main>
+  <p style="font-size:3rem;margin:0" aria-hidden="true">📖</p>
+  <h1>ページが見つかりません</h1>
+  <p>お探しのページは移動したか、アドレスが間違っている可能性があります。</p>
+  <p><a id="home" class="button" href="./">トップページへ戻る</a></p>
+</main>
+<script>
+  // GitHub Pages（https://ユーザー名.github.io/リポジトリ名/）でも、独自ドメインでも、トップへ戻れるようにする
+  (function () {
+    var a = document.getElementById("home");
+    var parts = location.pathname.split("/").filter(Boolean);
+    var base = /\.github\.io$/.test(location.hostname) && parts.length ? "/" + parts[0] + "/" : "/";
+    a.href = base;
+  })();
+</script>
+</body>
+</html>

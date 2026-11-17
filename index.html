@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClaudeとGitHubではじめる小説管理</title>
+<meta name="description" content="GitHubを使ったことがない人でも、ブラウザだけでClaudeと一緒に小説の原稿・プロット・設定資料を管理できるようになるための手順を、ひとつずつ解説します。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/prompts.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+<header id="site-header" class="site-header">
+  <div class="header-inner"><a class="brand" href="index.html">ClaudeとGitHubではじめる小説管理</a></div>
+</header>
+
+<main id="main">
+<div id="progress" class="progress" aria-live="polite"></div>
+<noscript><p class="callout callout-warn">このサイトのメニューやコピーボタンを使うには、ブラウザのJavaScriptを有効にしてください。</p></noscript>
+
+<!-- ===== ここから本文 ===== -->
+<article>
+<section class="hero">
+  <h1>ClaudeとGitHubではじめる<br>小説管理</h1>
+  <p class="lead">原稿・プロット・設定資料を、Claude と一緒に安全に書いて、整理して、保存する。<br>GitHub がはじめての人でも、ブラウザだけで始められます。</p>
+  <p><a class="button button-large" href="github-account.html">はじめる</a></p>
+  <p class="small">パソコンへのソフトのインストールは不要です。</p>
+</section>
+
+<h2>このサイトでできるようになること</h2>
+<p>このサイトの手順を順番に進めると、次のような「小説の仕事場」ができあがります。</p>
+<ul>
+  <li>Claude に日本語で頼むだけで、<strong>プロット作り・執筆・推敲</strong>を手伝ってもらえる</li>
+  <li>原稿・プロット・キャラクター設定・世界観設定を、<strong>決まった場所に整理して保存</strong>できる</li>
+  <li>本編と<strong>複数のスピンオフ</strong>を、設定を共有しながら管理できる</li>
+  <li>いつ・何を変えたかの<strong>履歴が残り</strong>、前の状態を確認できる</li>
+</ul>
+
+<h2>Claude と GitHub を組み合わせるメリット</h2>
+<div class="cards">
+  <div class="card"><span class="card-icon" aria-hidden="true">📚</span><h3>設定を読んでから書いてくれる</h3><p>Claude が保存済みの設定資料やこれまでの原稿を読んでから執筆するので、毎回説明し直す手間が減ります。</p></div>
+  <div class="card"><span class="card-icon" aria-hidden="true">🔒</span><h3>自分だけの非公開の保管場所</h3><p>GitHub の「非公開（Private）」の保管場所を使うので、原稿は自分以外には見えません。</p></div>
+  <div class="card"><span class="card-icon" aria-hidden="true">🕰</span><h3>変更の履歴が残る</h3><p>保存するたびに記録が残るので、「前のほうが良かった」というときも確認・復元ができます。</p></div>
+  <div class="card"><span class="card-icon" aria-hidden="true">🛡</span><h3>完成原稿を守るルール</h3><p>テンプレートには「完成原稿は指示がない限り変更しない」などのルールが入っていて、Claude はそれに従って作業します。</p></div>
+</div>
+
+<h2>必要なもの</h2>
+<div class="table-wrap"><table>
+  <tr><th>必要なもの</th><th>説明</th></tr>
+  <tr><td>GitHub のアカウント（無料）</td><td>原稿を保管する場所です。<a href="github-account.html">ステップ1</a>で作ります。</td></tr>
+  <tr><td>Claude Pro の契約</td><td>ブラウザ版の Claude Code を使うために必要です（Max などの上位プランでも使えます）。</td></tr>
+  <tr><td>パソコンとブラウザ</td><td>Chrome、Edge、Safari など。設定作業はパソコンで行うのがおすすめです。</td></tr>
+  <tr><td>メールアドレス</td><td>GitHub のアカウント作成と確認に使います。</td></tr>
+</table></div>
+
+<h2>はじめるまでの流れ</h2>
+<p>上から順番に進めてください。各ページの最後で「完了」にチェックを入れると、ここに進み具合が表示されます。</p>
+<ol id="step-checklist" class="checklist">
+  <li><a href="github-account.html">1. GitHubアカウントの作成</a></li>
+  <li><a href="create-repository.html">2. 小説管理リポジトリの作成</a></li>
+  <li><a href="claude-code.html">3. Claude Codeとの連携</a></li>
+  <li><a href="initial-setup.html">4. 小説の初期設定</a></li>
+  <li><a href="writing.html">5. 小説の執筆と管理</a></li>
+</ol>
+<p>困ったときは <a href="faq.html">よくある質問・トラブル解決</a>、よく使う指示は <a href="prompts.html">プロンプト集</a> をご覧ください。</p>
+
+<h2>このサイトの現在の状況</h2>
+<div class="callout callout-pending">
+  <p class="callout-title">🛠 準備中の内容があります</p>
+  <ul>
+    <li>小説管理テンプレート（このサイトで使う「ひな形」）は現在準備中です。公開URLが決まりしだい、手順2に掲載します。</li>
+    <li>Claude の作業内容を、自動で「main（メインの保存場所）」に反映する仕組みは<strong>まだ検証中</strong>です。現時点では、手順の中で説明する<strong>暫定の方法</strong>で反映します。</li>
+    <li>画面の画像は、実際の操作で確認できたものから順次追加します。「画像準備中」の枠は、あとで画像に差し替わります。</li>
+  </ul>
+</div>
+<p style="text-align:center"><a class="button button-large" href="github-account.html">はじめる</a></p>
+</article>
+<!-- ===== ここまで本文 ===== -->
+
+<nav id="pager" class="pager" aria-label="前後のページ"></nav>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

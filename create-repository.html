@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小説管理リポジトリの作成｜ClaudeとGitHubではじめる小説管理</title>
+<meta name="description" content="テンプレートをコピーして、自分専用の非公開（Private）の小説管理リポジトリを作る方法を説明します。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/prompts.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+<header id="site-header" class="site-header">
+  <div class="header-inner"><a class="brand" href="index.html">ClaudeとGitHubではじめる小説管理</a></div>
+</header>
+
+<main id="main">
+<div id="progress" class="progress" aria-live="polite"></div>
+<noscript><p class="callout callout-warn">このサイトのメニューやコピーボタンを使うには、ブラウザのJavaScriptを有効にしてください。</p></noscript>
+
+<!-- ===== ここから本文 ===== -->
+<article>
+<h1>小説管理リポジトリの作成</h1>
+<p class="lead">小説の原稿や設定資料をしまう、あなた専用の「保管場所」を作ります。</p>
+
+<nav class="toc" aria-label="このページの目次">
+  <p>このページの内容</p>
+  <ol>
+    <li><a href="#what">リポジトリとは</a></li>
+    <li><a href="#template">テンプレートからコピーする</a></li>
+    <li><a href="#name">名前の決め方</a></li>
+    <li><a href="#private">Private を選ぶ理由</a></li>
+    <li><a href="#check">作成後の確認</a></li>
+  </ol>
+</nav>
+
+<h2 id="what">リポジトリとは</h2>
+<p>リポジトリは、GitHub の中にある<strong>ひとつの「保管箱」</strong>のようなものです。フォルダやファイルを入れておくことができ、中身を変更するたびに履歴が記録されます。</p>
+<p>このサイトでは、<strong>1つのリポジトリに、ひとつの作品世界（本編とスピンオフ）をまとめて</strong>保管します。</p>
+
+<h3>テンプレートとは</h3>
+<p>テンプレートは、小説管理に必要なフォルダや、Claude 用のルール（<code>CLAUDE.md</code>）があらかじめ入った「ひな形」です。これをコピーして、自分のリポジトリを作ります。中身は次のような構成です（予定）。</p>
+<div class="table-wrap"><table>
+  <tr><th>フォルダ・ファイル</th><th>入れるもの</th></tr>
+  <tr><td><code>settings/</code></td><td>全作品に共通する設定資料（キャラクター・世界観・年表など）</td></tr>
+  <tr><td><code>novels/</code></td><td>本編の完成原稿。中に <code>drafts/</code>（第一稿）と <code>plots/</code>（プロット）</td></tr>
+  <tr><td><code>spinoffs/</code></td><td>スピンオフ。作品ごとにフォルダを作り、それぞれに完成原稿・<code>drafts/</code>・<code>plots/</code>・必要なら <code>settings/</code></td></tr>
+  <tr><td><code>CLAUDE.md</code></td><td>Claude が守る作業ルール</td></tr>
+  <tr><td><code>README.md</code></td><td>使い方の説明</td></tr>
+</table></div>
+<p class="small">原稿は <code>.txt</code>（テキストファイル）、設定資料やプロットは <code>.md</code>（マークダウン）という形式で保存されます。</p>
+
+<h2 id="template">テンプレートからコピーする</h2>
+<div data-template-link></div>
+<ol class="steps">
+  <li><p>GitHub にログインした状態で、上のボタンからテンプレートのページを開きます。</p></li>
+  <li><p>ファイル一覧の上にある <span class="ui">Use this template</span> をクリックし、<span class="ui">Create a new repository</span> を選びます。</p>
+    <figure class="shot" data-shot="template-use-button" data-caption="「Use this template」ボタン"></figure></li>
+  <li><p><strong>Owner</strong>（持ち主）が自分のユーザー名になっていることを確認します。</p></li>
+  <li><p><strong>Repository name</strong>（リポジトリの名前）を入力します。決め方は下の<a href="#name">「名前の決め方」</a>を参照してください。</p></li>
+  <li><p>公開範囲で <strong><span class="ui">Private</span></strong> を選びます。<strong>ここがいちばん大切です。</strong></p>
+    <figure class="shot" data-shot="template-create-form" data-caption="名前の入力と「Private」の選択"></figure></li>
+  <li><p><span class="ui">Include all branches</span> というチェックは、<strong>付けずにそのまま</strong>にします。</p></li>
+  <li><p><span class="ui">Create repository</span>（または <span class="ui">Create repository from template</span>）をクリックします。</p></li>
+</ol>
+<p class="small">手順は GitHub 公式ドキュメント「<a data-link="githubDocsTemplate" href="https://docs.github.com/ja/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">テンプレートからリポジトリを作成する ↗</a>」にもとづいています。ボタンの表記は変わることがあります。</p>
+
+<h2 id="name">名前の決め方</h2>
+<ul>
+  <li><strong>半角英数字とハイフン（-）</strong>で付けるのがおすすめです。日本語や空白は避けましょう。</li>
+  <li>作品や作品世界がわかる名前にしておくと、あとで見分けやすくなります。</li>
+  <li>名前はあとから変更することもできます。</li>
+</ul>
+<div class="table-wrap"><table>
+  <tr><th>よい例</th><th>避けたい例</th></tr>
+  <tr><td><code>my-novel</code><br><code>hoshiyomi-novel</code><br><code>fantasy-series</code></td><td><code>私の小説</code>（日本語）<br><code>my novel</code>（空白入り）</td></tr>
+</table></div>
+
+<h2 id="private">Private を選ぶ理由</h2>
+<p>GitHub のリポジトリには、<strong>Public（公開）</strong>と<strong>Private（非公開）</strong>があります。</p>
+<div class="table-wrap"><table>
+  <tr><th>種類</th><th>見られる人</th></tr>
+  <tr><td>Public（公開）</td><td>インターネット上の誰でも、原稿や設定を読めます</td></tr>
+  <tr><td>Private（非公開）</td><td>あなたと、あなたが許可した人（と連携したサービス）だけ</td></tr>
+</table></div>
+<div class="callout callout-warn">
+  <p class="callout-title">⚠️ 必ず Private を選んでください</p>
+  <p>Public にすると、未発表の原稿やアイデアが誰でも読める状態になります。作成後に Public になっていることに気づいた場合は、リポジトリの <span class="ui">Settings</span> の一番下にある「Danger Zone」から公開範囲を変更できます。</p>
+</div>
+
+<h2 id="check">作成後の確認</h2>
+<p>作成が終わると、自分のリポジトリのページが表示されます。次の点を確認してください。</p>
+<ol class="steps">
+  <li><p>リポジトリ名の横に <strong>「Private」</strong>という表示があること。</p>
+    <figure class="shot" data-shot="repo-created" data-caption="作成したリポジトリのページ"></figure></li>
+  <li><p>ファイル一覧に <code>CLAUDE.md</code>、<code>README.md</code>、<code>settings</code>、<code>novels</code>、<code>spinoffs</code> があること。</p></li>
+  <li><p>ページのアドレス（URL）をブックマークしておくこと。<br>例：<code>https://github.com/あなたのユーザー名/my-novel</code></p></li>
+</ol>
+<div class="callout">
+  <p class="callout-title">📝 サンプルの作品について</p>
+  <p>テンプレートには、使い方の例として架空のサンプル作品が入っています。サンプルは、ステップ4「小説の初期設定」で Claude に頼んで削除します。自分で消す必要はありません。</p>
+</div>
+
+<h2>このページのまとめ</h2>
+<ul>
+  <li>テンプレートから、自分専用のリポジトリを作った</li>
+  <li>公開範囲が <strong>Private</strong> になっていることを確認した</li>
+</ul>
+</article>
+<!-- ===== ここまで本文 ===== -->
+
+<div id="step-done" class="step-done"></div>
+<nav id="pager" class="pager" aria-label="前後のページ"></nav>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

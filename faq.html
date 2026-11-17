@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>よくある質問・トラブル解決｜ClaudeとGitHubではじめる小説管理</title>
+<meta name="description" content="GitHubの料金、原稿の公開範囲、Claudeの利用制限、保存の失敗、PRやブランチの意味など、初心者が困りやすい内容をまとめました。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/prompts.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+<header id="site-header" class="site-header">
+  <div class="header-inner"><a class="brand" href="index.html">ClaudeとGitHubではじめる小説管理</a></div>
+</header>
+
+<main id="main">
+<div id="progress" class="progress" aria-live="polite"></div>
+<noscript><p class="callout callout-warn">このサイトのメニューやコピーボタンを使うには、ブラウザのJavaScriptを有効にしてください。</p></noscript>
+
+<!-- ===== ここから本文 ===== -->
+<article>
+<h1>よくある質問・トラブル解決</h1>
+<p class="lead">困ったときは、まずここを確認してください。質問をクリックすると答えが開きます。</p>
+<nav class="toc" aria-label="分類">
+  <p>分類</p>
+  <ol>
+    <li><a href="#money">料金・安全性</a></li>
+    <li><a href="#claude">Claude の使い方</a></li>
+    <li><a href="#trouble">トラブル</a></li>
+    <li><a href="#words">用語</a></li>
+  </ol>
+</nav>
+
+<h2 id="money">料金・安全性</h2>
+<details class="faq" id="free">
+  <summary>GitHub は無料で使える？</summary>
+  <div class="answer">
+    <p>はい。個人向けの無料プラン（GitHub Free）で、<strong>非公開のリポジトリを数の制限なく作れます</strong>。このサイトの手順は無料プランで進められます。</p>
+    <p>Claude Code を使うには、Claude 側の有料プラン（Claude Pro など）が必要です。</p>
+    <p class="small">プランの内容は変わることがあります。<a data-link="githubDocsPlans" href="https://docs.github.com/ja/get-started/learning-about-github/githubs-plans">GitHub公式のプラン説明 ↗</a></p>
+  </div>
+</details>
+<details class="faq" id="private">
+  <summary>原稿は他人に見られない？</summary>
+  <div class="answer">
+    <p>リポジトリを <strong>Private（非公開）</strong>で作っていれば、あなたと、あなたが許可した人やサービスだけがアクセスできます。Claude Code は、あなたが Claude GitHub App で許可したリポジトリにアクセスします。</p>
+    <p>リポジトリ名の横に「Private」と表示されているか確認してください。「Public」になっていたら、リポジトリの <span class="ui">Settings</span> の下のほうにある「Danger Zone」から変更できます。</p>
+  </div>
+</details>
+<details class="faq">
+  <summary>アカウントを乗っ取られないか心配</summary>
+  <div class="answer">
+    <p>GitHub の<a href="github-account.html#2fa">二段階認証</a>を設定し、リカバリーコードを安全な場所に保管してください。パスワードはほかのサービスと使い回さないようにしましょう。</p>
+  </div>
+</details>
+
+<h2 id="claude">Claude の使い方</h2>
+<details class="faq" id="limit">
+  <summary>Claude の利用制限に達したら？</summary>
+  <div class="answer">
+    <p>Claude Code の利用量は、ふつうの Claude チャットと同じ<strong>プランの利用上限</strong>に含まれます。上限に達すると、しばらく使えなくなります。</p>
+    <ul>
+      <li>画面に表示される、再び使えるようになる時刻まで待ってください。</li>
+      <li>それまでに保存（反映）された原稿は、GitHub に残っているので消えません。</li>
+      <li>長い原稿を一度にたくさん書いてもらうと、利用量が増えやすくなります。1話ずつ頼むのがおすすめです。</li>
+    </ul>
+  </div>
+</details>
+<details class="faq" id="new-session">
+  <summary>Claude との会話を新しくしても大丈夫？</summary>
+  <div class="answer">
+    <p>大丈夫です。原稿や設定は GitHub に保存されていて、Claude は新しい会話でもそれを読んで作業します。会話の内容そのものは引き継がれないので、必要なことは改めて伝えてください。</p>
+    <p><strong>注意：</strong>前の会話の作業内容を <a href="writing.html#save">main に反映</a>していないと、新しい会話では前回の変更が見えないことがあります。新しい会話を始める前に、反映をすませておきましょう。</p>
+    <p>新しい会話の最初に、次のように頼むと状況を確認できます。</p>
+    <div data-prompt="trouble-new-session"></div>
+  </div>
+</details>
+<details class="faq" id="other-pc">
+  <summary>別のパソコンやスマホでも使える？</summary>
+  <div class="answer">
+    <p>使えます。原稿は GitHub に、作業は Claude のクラウド上にあるので、どのパソコンでも、ブラウザで GitHub と Claude にログインすれば同じように作業できます。</p>
+    <p>Anthropic の案内では、Claude のスマホアプリからも Claude Code の作業を始めたり、様子を確認したりできるとされています。ただし、このサイトの手順はパソコンでの操作を前提にしています。</p>
+  </div>
+</details>
+<details class="faq">
+  <summary>ふつうの Claude チャットで書いた文章を取り込みたい</summary>
+  <div class="answer">
+    <p>チャットの文章をコピーして Claude Code に貼り付け、「これを本編の第◯話の第一稿として保存して」と頼んでください。</p>
+  </div>
+</details>
+<details class="faq">
+  <summary>Claude が勝手に完成原稿を書き換えない？</summary>
+  <div class="answer">
+    <p>テンプレートの <code>CLAUDE.md</code> に「完成原稿は明示的な依頼がない限り変更しない」というルールを書いており、Claude はそれに従って作業します。ただし AI は間違えることもあるので、報告の「変更したファイル」は確認するようにしましょう。万一変わってしまっても、<a href="writing.html#history">履歴から元に戻せます</a>。</p>
+  </div>
+</details>
+
+<h2 id="trouble">トラブル</h2>
+<details class="faq" id="wrong-edit">
+  <summary>間違えて原稿を変更してしまったら？</summary>
+  <div class="answer">
+    <p>GitHub には変更の履歴が残っているので、前の状態に戻せます。Claude に次のように頼んでください。</p>
+    <div data-prompt="trouble-undo"></div>
+    <p>もっと前の状態に戻したい場合は、<a href="writing.html#history">過去の原稿の確認・復元</a>を参照してください。</p>
+  </div>
+</details>
+<details class="faq" id="save-failed">
+  <summary>GitHub への保存に失敗したら？</summary>
+  <div class="answer">
+    <ol>
+      <li>Claude の報告やエラーの文章を確認します。意味がわからなければ、Claude に説明してもらいましょう。</li>
+    </ol>
+    <div data-prompt="trouble-explain"></div>
+    <ol start="2">
+      <li>保存されているかどうかを Claude に確認してもらい、されていなければ保存し直してもらいます。</li>
+    </ol>
+    <div data-prompt="trouble-save-status"></div>
+    <ol start="3">
+      <li>GitHub との連携が切れている可能性がある場合は、<a href="claude-code.html#trouble">Claude Code との連携のトラブル</a>を確認してください。</li>
+    </ol>
+  </div>
+</details>
+<details class="faq">
+  <summary>リポジトリが Claude Code の一覧に出てこない</summary>
+  <div class="answer">
+    <p>Claude GitHub App が、そのリポジトリに許可されていない可能性があります。<a href="claude-code.html#trouble">Claude Code との連携のトラブル</a>を確認してください。</p>
+  </div>
+</details>
+<details class="faq">
+  <summary>二段階認証のスマホをなくした・機種変更した</summary>
+  <div class="answer">
+    <p>保管しておいた<strong>リカバリーコード</strong>を使ってログインし、新しいスマホで二段階認証を設定し直してください。機種変更の前に、認証アプリの引き継ぎ方法も確認しておきましょう。</p>
+  </div>
+</details>
+<details class="faq">
+  <summary>サンプル作品が残ったままになっている</summary>
+  <div class="answer">
+    <p><a href="initial-setup.html">小説の初期設定</a>の初回プロンプトを、もう一度送ってください。</p>
+  </div>
+</details>
+
+<h2 id="words">用語</h2>
+<details class="faq" id="branch">
+  <summary>PR（プルリクエスト）やブランチとは何？</summary>
+  <div class="answer">
+    <p><strong>ブランチ</strong>は、リポジトリの中に作る「作業用の保存場所」です。メインの保存場所は <code>main</code> というブランチで、Claude Code は作業ごとに別のブランチを作って、そこに変更を保存することがあります。</p>
+    <p><strong>PR（プルリクエスト）</strong>は、「作業用のブランチの変更を main に取り込みたい」という申請です。PR を「マージ（取り込み）」すると、変更が main に反映されます。</p>
+    <p>将来的には、利用者が PR やブランチを意識しなくてよい仕組みを目指していますが、現在は準備中です。今の手順は <a href="writing.html#save">作業内容の保存と反映</a> をご覧ください。</p>
+  </div>
+</details>
+<details class="faq">
+  <summary>.txt と .md の違いは？</summary>
+  <div class="answer">
+    <p><code>.txt</code> は飾りのない文字だけのファイルで、このテンプレートでは<strong>小説の本文</strong>に使います。<code>.md</code>（マークダウン）は、見出しや表などを使える文章ファイルで、<strong>設定資料やプロット</strong>に使います。GitHub の画面では、<code>.md</code> は見出しや表が整った状態で表示されます。</p>
+  </div>
+</details>
+<details class="faq">
+  <summary>CLAUDE.md とは？</summary>
+  <div class="answer">
+    <p>Claude が作業するときに守るルールを書いたファイルです。Claude Code は、リポジトリにあるこのファイルを読んでから作業します。ふだんは触る必要はありません。</p>
+  </div>
+</details>
+<details class="faq">
+  <summary>コミット・プッシュ・マージとは？</summary>
+  <div class="answer">
+    <ul>
+      <li><strong>コミット</strong>：変更を「記録」すること</li>
+      <li><strong>プッシュ</strong>：記録した変更を GitHub に「保存」すること</li>
+      <li><strong>マージ</strong>：別のブランチの変更を「取り込む」こと</li>
+    </ul>
+    <p>これらの操作は Claude が行うので、言葉を覚える必要はありません。</p>
+  </div>
+</details>
+
+<h2>解決しないときは</h2>
+<p>Claude Code に、困っていることをそのまま書いて相談してみてください。エラーの文章を貼り付けると、原因を説明してもらえます。</p>
+</article>
+<!-- ===== ここまで本文 ===== -->
+
+<nav id="pager" class="pager" aria-label="前後のページ"></nav>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>

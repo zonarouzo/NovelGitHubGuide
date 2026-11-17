@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プロンプト集｜ClaudeとGitHubではじめる小説管理</title>
+<meta name="description" content="執筆・推敲・原稿管理・設定管理・矛盾チェック・スピンオフ・トラブル対応など、Claudeによく使う指示をワンクリックでコピーできます。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/prompts.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+<header id="site-header" class="site-header">
+  <div class="header-inner"><a class="brand" href="index.html">ClaudeとGitHubではじめる小説管理</a></div>
+</header>
+
+<main id="main">
+<div id="progress" class="progress" aria-live="polite"></div>
+<noscript><p class="callout callout-warn">このサイトのメニューやコピーボタンを使うには、ブラウザのJavaScriptを有効にしてください。</p></noscript>
+
+<!-- ===== ここから本文 ===== -->
+<article>
+<h1>プロンプト集</h1>
+<p class="lead">Claude Code によく使う指示（プロンプト）をまとめました。<span class="ui">コピー</span> ボタンを押して、Claude Code の入力欄に貼り付けて使ってください。</p>
+
+<h2>使い方のコツ</h2>
+<ul>
+  <li><strong>【 】の部分</strong>は、自分の内容に書き換えます。【 】の記号ごと消してください。</li>
+  <li>話数は「第3話」のように<strong>数字で</strong>伝えるとわかりやすくなります。</li>
+  <li>意見だけほしいときは「<strong>ファイルは変更しないでください</strong>」と書き添えます。</li>
+  <li>完成原稿を直すときは「<strong>完成原稿の</strong>第◯話」と明記します。</li>
+  <li>スピンオフの場合は「スピンオフ『タイトル』の」と作品名を入れます。</li>
+  <li>このとおりの文章でなくても大丈夫です。ふだんの言葉で頼んでも Claude は理解します。</li>
+</ul>
+
+<h2>分類から探す</h2>
+<div id="prompt-catalog">
+  <p class="small">プロンプトを読み込んでいます…</p>
+</div>
+</article>
+<!-- ===== ここまで本文 ===== -->
+
+<nav id="pager" class="pager" aria-label="前後のページ"></nav>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+</body>
+</html>
