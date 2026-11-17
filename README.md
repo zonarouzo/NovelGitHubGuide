@@ -39,7 +39,7 @@ GitHub Pages で公開しており、HTML / CSS / JavaScript だけで作って�
 
 ## よくある更新のしかた
 
-### テンプレートリポジトリのURLが決まったら
+### テンプレートリポジトリのURLを変えたいとき
 
 `assets/js/config.js` の `templateRepoUrl` に URL を入れます。
 
@@ -85,7 +85,7 @@ screenshots: {
 | `github-signup-code` | アカウント作成 | メールで届いた確認コードを入力する画面 | ★ |
 | `github-email-verify` | アカウント作成 | メール設定の画面（確認メールの再送） | ★ |
 | `github-2fa-enable` | アカウント作成 | 二段階認証を有効にするボタン | ★★ |
-| `template-use-button` | リポジトリ作成 | 「Use this template」ボタン | ★★★ |
+| `template-use-button` | リポジトリ作成 | 「Use this template」ボタン | ★★★（登録済み） |
 | `template-create-form` | リポジトリ作成 | 名前の入力と「Private」の選択 | ★★★ |
 | `repo-created` | リポジトリ作成 | 作成したリポジトリのページ | ★ |
 | `claude-code-top` | Claude Code連携 | Claude Code の最初の画面 | ★ |
@@ -129,10 +129,10 @@ screenshots: {
 
 次の内容は未確定のため、サイト上で「準備中」「暫定」と明記しています。確定したら更新してください。
 
-- **テンプレートリポジトリのURL**：`config.js` の `templateRepoUrl`（現在は空欄）
+- **テンプレートリポジトリのURL**：確定済み（`https://github.com/zonarouzo/NovelTemplate`）。変わった場合は `config.js` の `templateRepoUrl` を更新
 - **main への自動反映**：未検証。現在は「Create PR → Merge pull request」の暫定手順を `writing.html#save` に掲載
 - **初回プロンプト**：テンプレートの最終仕様に合わせて `prompts.js` の `initial-setup` を調整
-- **スクリーンショット**：未登録（枠は非表示。`showScreenshotPlaceholders` で表示切り替え）
+- **スクリーンショット**：`template-use-button` のみ登録済み。ほかは未登録（枠は非表示。`showScreenshotPlaceholders` で表示切り替え）
 
 ## 内容の根拠
 

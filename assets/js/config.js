@@ -14,7 +14,7 @@ window.SITE_CONFIG = {
    * 確定したら "https://github.com/（ユーザー名）/（リポジトリ名）" の形で入力してください。
    * 空欄のあいだは、サイト上に「準備中」と表示されます。
    */
-  templateRepoUrl: "",
+  templateRepoUrl: "https://github.com/zonarouzo/NovelTemplate",
 
   /* 外部リンク（公式サイト） */
   links: {
@@ -56,6 +56,7 @@ window.SITE_CONFIG = {
    * 例： "github-signup": "github-signup.png"
    */
   screenshots: {
+    "template-use-button": "template-use-button.png"
   },
 
   /*
