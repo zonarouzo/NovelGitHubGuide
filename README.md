@@ -1,7 +1,9 @@
 # ClaudeとGitHubではじめる小説管理
 
+**🌐 公開サイト：https://zonarouzo.github.io/NovelGitHubGuide/**
+
 GitHub とブラウザ版 Claude Code を使って、小説の原稿・プロット・設定資料を管理する方法を、GitHub 未経験者向けに解説する HowTo サイトです。
-GitHub Pages で公開することを前提に、HTML / CSS / JavaScript だけで作っています（ビルド不要・外部サービス不要）。
+GitHub Pages で公開しており、HTML / CSS / JavaScript だけで作っています（ビルド不要・外部サービス不要）。
 
 ## ページ構成
 
