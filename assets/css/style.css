@@ -420,3 +420,8 @@ details.more > summary .more-tag {
 
 /* 画像の拡大リンク */
 .shot-link { display: block; cursor: zoom-in; }
+
+/* 画像の ①②③ に対応する操作の一覧 */
+.marks { list-style: none; padding: 0; margin: 0.6em 0; }
+.marks li { display: flex; gap: 8px; align-items: flex-start; font-weight: 600; margin: 0.4em 0; }
+.marks .mark { flex: none; color: #e8590c; font-weight: 700; font-size: 1.1em; line-height: 1.7; }

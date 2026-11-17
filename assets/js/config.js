@@ -56,7 +56,8 @@ window.SITE_CONFIG = {
    * 例： "github-signup": "github-signup.png"
    */
   screenshots: {
-    "template-use-button": "template-use-button.png"
+    "template-use-button": "template-use-button.png",
+    "template-create-form": "template-create-form.png"
   },
 
   /*
