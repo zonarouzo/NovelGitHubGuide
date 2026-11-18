@@ -92,6 +92,8 @@ screenshots: {
 | `github-authorize` | Claude Code連携 | GitHub の許可の画面 | ★★ |
 | `github-app-install` | Claude Code連携 | Claude に許可するリポジトリを選ぶ画面（GitHub） | ★★★（登録済み） |
 | `claude-code-repo-select` | Claude Code連携 | リポジトリを選ぶ画面 | ★★★（登録済み） |
+| `app-repo-add` | Claude Code連携 | スマホのアプリ：「リポジトリを追加」 | 登録済み |
+| `app-repo-select` | Claude Code連携 | スマホのアプリ：リポジトリを選んだ画面（ゲームの例） | 登録済み |
 | `initial-prompt-sent` | 初期設定 | 初回プロンプトを送信したところ（現在ページでは未使用） | — |
 | `github-file-history` | 執筆と管理 | ファイルの変更履歴 | ★ |
 | `claude-code-create-pr` | 執筆と管理 | Claude Code の「Create PR」ボタン（反映に失敗したときだけ使う） | ★ |

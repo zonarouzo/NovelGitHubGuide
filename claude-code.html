@@ -52,6 +52,7 @@
 <h2 id="open">1. Claude Code を開く</h2>
 <ol class="steps">
   <li><p class="step-main"><a data-link="claudeCode" href="https://claude.ai/code">claude.ai/code ↗</a> を開き、Claude Pro のアカウントでログインします。</p>
+    <div class="note"><p>スマホでは、Claude のアプリの Code の画面から、新しいセッションを始めます。</p></div>
     <figure class="shot" data-shot="claude-code-top" data-caption="Claude Code の最初の画面"></figure></li>
 </ol>
 
@@ -82,7 +83,7 @@
 
 <h2 id="select">3. リポジトリを選んで確かめる</h2>
 <ol class="steps">
-  <li><p class="step-main">次の ①② の順に操作して、小説のリポジトリを選びます。</p>
+  <li><p class="step-main"><strong>パソコンのブラウザ</strong>では、次の ①② の順に操作して、小説のリポジトリを選びます。</p>
     <figure class="shot" data-shot="claude-code-repo-select" data-caption="リポジトリを選ぶ画面の ①② の場所"></figure>
     <ul class="marks">
       <li><span class="mark">①</span><span>入力欄の下にある、<strong>本のアイコンのボタン</strong>（リポジトリ名）を押します。</span></li>
@@ -92,6 +93,15 @@
       <p>リポジトリが多いときは、上の検索欄に名前を入力すると見つけやすくなります。画像では、ほかのリポジトリ名をぼかしています。</p>
       <p>右隣の <code>main</code>（作業の元にする場所）は、そのままで大丈夫です。</p>
     </div></li>
+  <li id="select-app"><p class="step-main"><strong>スマホのアプリ</strong>では、次の ①〜③ の順に操作して、小説のリポジトリを選びます。</p>
+    <figure class="shot" data-shot="app-repo-add" data-caption="① 新規セッションの画面の「リポジトリを追加」"></figure>
+    <figure class="shot" data-shot="app-repo-select" data-caption="② 選んだリポジトリが「選択済み」に表示される、③ ✕ で閉じる（画像はゲームのリポジトリを選んだ例）"></figure>
+    <ul class="marks">
+      <li><span class="mark">①</span><span>入力欄の上にある <span class="ui">リポジトリを追加</span> を押します。</span></li>
+      <li><span class="mark">②</span><span>一覧から、ステップ2で作った小説のリポジトリを押します。「選択済み」に表示され、✓ が付きます。</span></li>
+      <li><span class="mark">③</span><span>左上の <span class="ui">✕</span> を押して、一覧を閉じます。</span></li>
+    </ul>
+    <div class="note"><p>一覧に見つからないときは、下の <span class="ui">さらに接続</span> から、画面の案内に従って Claude に許可するリポジトリを追加します。画像では、ほかのリポジトリ名をぼかしています。</p></div></li>
   <li id="test"><p class="step-main">次の文章をコピーして送ります。ファイルの一覧が返ってくれば成功です。</p>
     <pre class="copyable" data-title="接続の確認">このリポジトリにあるフォルダとファイルの一覧を教えてください。
 ファイルは変更しないでください。</pre>
